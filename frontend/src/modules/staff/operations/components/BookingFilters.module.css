@@ -1,0 +1,97 @@
+.bar {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--pcs-neutral-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.dateInput,
+.select {
+  height: 48px;
+  border: 1.5px solid var(--pcs-neutral-200);
+  border-radius: 10px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: var(--pcs-neutral-900);
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+.dateInput:focus,
+.select:focus {
+  border-color: var(--pcs-brand-primary);
+}
+
+.dateInput { min-width: 150px; }
+.select { min-width: 160px; }
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pcs-neutral-50);
+  border: 1.5px solid var(--pcs-neutral-200);
+  border-radius: 10px;
+  padding: 0 12px;
+  height: 48px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 340px;
+  transition: border-color 0.15s;
+}
+
+.searchBox:focus-within {
+  border-color: var(--pcs-brand-primary);
+  background: #fff;
+}
+
+.searchBox input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--pcs-neutral-900);
+  flex: 1;
+  min-width: 0;
+}
+
+.searchBox input::placeholder { color: var(--pcs-neutral-400); }
+
+.clearBtn {
+  background: none;
+  border: none;
+  color: var(--pcs-neutral-400);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0 2px;
+}
+
+.clearBtn:hover { color: var(--pcs-neutral-600); }
+
+.countBadge {
+  background: var(--pcs-brand-primary-light);
+  color: var(--pcs-brand-primary);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}

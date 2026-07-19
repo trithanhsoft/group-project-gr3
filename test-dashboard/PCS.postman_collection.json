@@ -1,0 +1,127 @@
+{
+  "info": {
+    "_postman_id": "8b5f3a09-6bc2-44c1-ae04-20a831e5c464",
+    "name": "PCS (Pickleball Booking System)",
+    "description": "Postman collection for PCS backend API testing, mapping core integration endpoints and expected responses.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Register [TC_USR_01 / TC_API_03]",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"New User\",\n  \"email\": \"newuser@example.com\",\n  \"phoneNumber\": \"0988776655\",\n  \"password\": \"Password123!\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/auth/register",
+          "host": ["{{base_url}}"],
+          "path": ["api", "auth", "register"]
+        },
+        "description": "Expected status: 201 Created. Registers a new player account and triggers OTP dispatch."
+      },
+      "response": []
+    },
+    {
+      "name": "Auth - Login [TC_USR_02 / TC_API_01]",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"Password123!\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/auth/login",
+          "host": ["{{base_url}}"],
+          "path": ["api", "auth", "login"]
+        },
+        "description": "Expected status: 200 OK. Returns JWT token on valid credentials."
+      },
+      "response": []
+    },
+    {
+      "name": "Courts - Get Active [TC_CRT_01 / TC_API_04]",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/courts?includeInactive=false",
+          "host": ["{{base_url}}"],
+          "path": ["api", "courts"],
+          "query": [
+            { "key": "includeInactive", "value": "false" }
+          ]
+        },
+        "description": "Expected status: 200 OK. Retrieves list of public active courts."
+      },
+      "response": []
+    },
+    {
+      "name": "Courts - Admin Get All (requires Auth) [TC_CRT_02 / TC_API_05]",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwt_token}}" }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/courts?includeInactive=true",
+          "host": ["{{base_url}}"],
+          "path": ["api", "courts"],
+          "query": [
+            { "key": "includeInactive", "value": "true" }
+          ]
+        },
+        "description": "Expected status: 200 OK for Admin. Retrieves all courts including inactive and under maintenance."
+      },
+      "response": []
+    },
+    {
+      "name": "Bookings - Create Booking (requires Auth) [TC_BKG_01 / TC_API_07]",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{jwt_token}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"courtId\": 1,\n  \"bookingDate\": \"2026-07-01\",\n  \"startTime\": \"08:00\",\n  \"endTime\": \"10:00\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/bookings/court",
+          "host": ["{{base_url}}"],
+          "path": ["api", "bookings", "court"]
+        },
+        "description": "Expected status: 201 Created. Places a pending payment slot hold."
+      },
+      "response": []
+    },
+    {
+      "name": "Payments - PayOS Webhook [TC_PAY_01 / TC_API_09]",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"success\": true,\n  \"data\": {\n    \"orderCode\": 1780151464,\n    \"amount\": 700000,\n    \"description\": \"Thanh toan don hang BK-1780151464\",\n    \"status\": \"PAID\",\n    \"reference\": \"PAYOS_REF_123\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/payments/payos-webhook",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "payos-webhook"]
+        },
+        "description": "Expected status: 200 OK. PayOS webhook IPN verifying paid amount."
+      },
+      "response": []
+    }
+  ]
+}

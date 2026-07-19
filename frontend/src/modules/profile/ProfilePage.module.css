@@ -1,0 +1,480 @@
+.page {
+  min-height: 100vh;
+  padding: 42px 0 70px;
+  background:
+    linear-gradient(
+      135deg,
+      var(--pcs-neutral-50),
+      var(--pcs-neutral-50),
+      var(--pcs-neutral-50)
+    );
+}
+
+.hero,
+.grid,
+.history,
+.error,
+.success,
+.state {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 34px;
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      var(--pcs-neutral-50)
+    );
+
+  border: 1px solid var(--pcs-neutral-200);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(39, 75, 31, 0.08);
+}
+
+.hero span {
+  display: inline-flex;
+  padding: 9px 15px;
+  border-radius: 999px;
+
+  background: var(--pcs-brand-primary-light);
+  color: var(--pcs-brand-primary);
+
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: 44px;
+  letter-spacing: -0.05em;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.hero p {
+  color: var(--pcs-neutral-600);
+  font-size: 16px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 28px;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--pcs-brand-primary),
+      var(--pcs-brand-primary-hover)
+    );
+
+  color: white;
+  font-size: 42px;
+  font-weight: 800;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 16px 36px rgba(39, 75, 31, 0.24);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid {
+  margin-top: 24px;
+
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+
+  gap: 22px;
+}
+
+.card {
+  padding: 28px;
+  border-radius: 26px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--pcs-neutral-200);
+
+  box-shadow:
+    0 16px 40px rgba(39, 75, 31, 0.06);
+}
+
+.card h2,
+.history h2 {
+  font-size: 26px;
+  letter-spacing: -0.04em;
+  margin-bottom: 22px;
+
+  color: var(--text);
+}
+
+.card label {
+  display: grid;
+  gap: 8px;
+
+  margin-bottom: 16px;
+
+  color: var(--pcs-neutral-800);
+  font-weight: 800;
+}
+
+.card input,
+.card select {
+  height: 52px;
+
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 14px;
+
+  padding: 0 16px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  font-weight: 700;
+
+  transition: 0.25s ease;
+}
+
+.card input:focus,
+.card select:focus {
+  border-color: var(--pcs-brand-primary);
+
+  box-shadow:
+    0 0 0 4px rgba(63, 107, 50, 0.12);
+}
+
+.card input:disabled {
+  background: var(--pcs-neutral-50);
+  color: var(--pcs-neutral-500);
+}
+
+.card button {
+  width: 100%;
+  height: 54px;
+
+  border: 0;
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--pcs-brand-primary) 0%,
+      var(--pcs-brand-primary-hover) 100%
+    );
+
+  color: white;
+  font-weight: 800;
+
+  transition: 0.25s ease;
+}
+
+.card button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 30px rgba(39, 75, 31, 0.22);
+}
+
+.card button:disabled {
+  opacity: 0.65;
+}
+
+.infoRow {
+  padding: 16px 0;
+
+  border-bottom: 1px solid var(--pcs-neutral-100);
+
+  display: grid;
+  gap: 6px;
+}
+
+.infoRow span {
+  color: var(--pcs-neutral-500);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.infoRow strong {
+  color: var(--text);
+  word-break: break-word;
+}
+
+.history {
+  margin-top: 24px;
+
+  padding: 28px;
+
+  border-radius: 26px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--pcs-neutral-200);
+
+  box-shadow:
+    0 16px 40px rgba(39, 75, 31, 0.06);
+}
+
+.historyHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+
+  margin-bottom: 20px;
+}
+
+.historyHeader p {
+  color: var(--pcs-brand-primary);
+  font-weight: 800;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.tableWrap table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.tableWrap th,
+.tableWrap td {
+  padding: 15px;
+
+  border-bottom: 1px solid var(--pcs-neutral-100);
+
+  text-align: left;
+  font-size: 14px;
+}
+
+.tableWrap th {
+  color: var(--pcs-neutral-700);
+  background: var(--pcs-neutral-50);
+}
+
+.empty,
+.state {
+  padding: 32px;
+
+  text-align: center;
+
+  color: var(--pcs-neutral-600);
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--pcs-neutral-200);
+}
+
+.error,
+.success {
+  margin-top: 18px;
+
+  padding: 15px 18px;
+
+  border-radius: 16px;
+
+  font-weight: 800;
+}
+
+.error {
+  color: var(--pcs-status-error);
+  background: var(--pcs-status-error-bg);
+  border: 1px solid var(--pcs-status-error-bg);
+}
+
+.success {
+  color: var(--pcs-status-success);
+  background: var(--pcs-status-success-bg);
+  border: 1px solid var(--pcs-status-success-bg);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ── Table Additions ── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 16px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pcs-neutral-600);
+  background: var(--pcs-neutral-50);
+  border-bottom: 1px solid var(--pcs-neutral-200);
+}
+
+.table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--pcs-neutral-200);
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background: var(--pcs-neutral-50);
+}
+
+.rowActioning {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.bookingCode {
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--pcs-status-info);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.bookingDate {
+  font-size: 12px;
+  color: var(--pcs-neutral-600);
+}
+
+.serviceType {
+  font-weight: 600;
+  color: var(--pcs-neutral-800);
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.serviceDetail {
+  font-size: 13px;
+  color: var(--pcs-neutral-600);
+}
+
+.playDate {
+  font-weight: 600;
+  color: var(--pcs-neutral-700);
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.playTime {
+  font-size: 13px;
+  color: var(--pcs-neutral-600);
+}
+
+.amount {
+  font-weight: 700;
+  color: var(--pcs-status-success);
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.paymentMethod {
+  font-size: 12px;
+  color: var(--pcs-neutral-600);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badgeConfirmed, .badgePaid { background: var(--pcs-status-success-bg); color: var(--pcs-status-success); }
+.badgeCheckedIn { background: var(--pcs-brand-primary-light); color: var(--pcs-brand-primary); }
+.badgePendingPayment { background: var(--pcs-status-warning-bg); color: var(--pcs-status-warning); }
+.badgeCancelled, .badgeRefunded, .badgeNoShow { background: var(--pcs-status-error-bg); color: var(--pcs-status-error); }
+.badgeCompleted { background: var(--pcs-neutral-100); color: var(--pcs-neutral-600); }
+
+.checkInTime {
+  font-size: 11px;
+  color: var(--pcs-neutral-600);
+  margin-top: 4px;
+}
+
+.actionCell {
+  display: flex;
+  gap: 8px;
+}
+
+.btnPay, .btnCancel {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btnPay {
+  background: var(--pcs-status-success-bg);
+  color: var(--pcs-status-success);
+}
+
+.btnPay:hover:not(:disabled) {
+  background: var(--pcs-status-success-bg);
+}
+
+.btnCancel {
+  background: var(--pcs-status-error-bg);
+  color: var(--pcs-status-error);
+}
+
+.btnCancel:hover:not(:disabled) {
+  background: var(--pcs-status-error-bg);
+}
+
+.noAction {
+  color: var(--pcs-neutral-400);
+  font-size: 13px;
+  padding-left: 8px;
+}
+/* UC-19: View All button */
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, var(--pcs-brand-primary), var(--pcs-brand-primary-hover));
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.viewAllBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(39, 75, 31, 0.25);
+}

@@ -1,0 +1,1022 @@
+/* ==========================================================================
+   HomePage.module.css - Redesigned with Google Clean & Premium Aesthetics
+   ========================================================================== */
+
+/* Page layout and base container */
+.page {
+  background: #ffffff;
+  color: var(--pcs-neutral-900);
+  font-family: inherit;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.heroSection {
+  background: linear-gradient(180deg, var(--pcs-neutral-50) 0%, #ffffff 100%);
+  padding: 60px 24px 40px;
+}
+
+.heroCard {
+  max-width: 1192px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(60,64,67,0.1), 0 4px 12px 0 rgba(60,64,67,0.05);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.heroCard:hover {
+  box-shadow: 0 4px 20px 0 rgba(60,64,67,0.15), 0 8px 30px 0 rgba(60,64,67,0.08);
+}
+
+.heroContent {
+  padding: 60px 48px 60px 60px;
+  z-index: 2;
+}
+
+.script {
+  display: inline-block;
+  background: var(--pcs-status-success-bg);
+  color: var(--pcs-status-success);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin: 0 0 20px;
+}
+
+.heroContent h1 {
+  margin: 0 0 16px;
+  color: var(--pcs-neutral-900);
+  font-size: clamp(36px, 4.5vw, 54px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.heroContent h1 span {
+  color: var(--pcs-brand-primary);
+}
+
+.desc {
+  color: var(--pcs-neutral-600);
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0 0 32px;
+  max-width: 480px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  height: 48px;
+  padding: 0 28px;
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--pcs-brand-primary);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(15,157,88,0.2), 0 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+.primary:hover {
+  background: var(--pcs-brand-primary-hover);
+  box-shadow: 0 4px 8px 0 rgba(15,157,88,0.3), 0 2px 4px 0 rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background: #ffffff;
+  color: var(--pcs-brand-primary);
+  border: 1px solid var(--pcs-neutral-200);
+}
+
+.secondary:hover {
+  background: var(--pcs-neutral-50);
+  border-color: var(--pcs-brand-primary);
+  transform: translateY(-1px);
+}
+
+/* Hero user feedback display */
+.heroUsers {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatars {
+  display: flex;
+  align-items: center;
+}
+
+.userAvatars span {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-left: -8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.userAvatars span:first-child {
+  margin-left: 0;
+}
+
+.userAvatars span:nth-child(1) { background: var(--pcs-brand-primary); }
+.userAvatars span:nth-child(2) { background: var(--pcs-status-info); }
+.userAvatars span:nth-child(3) { background: var(--pcs-status-error); }
+.userAvatars span:nth-child(4) {
+  background: var(--pcs-neutral-100);
+  color: var(--pcs-neutral-600);
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.heroUsers p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--pcs-neutral-600);
+}
+
+.heroUsers strong {
+  color: var(--pcs-neutral-900);
+  font-weight: 700;
+}
+
+/* Hero Image Column */
+.heroImageWrapper {
+  height: 100%;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ==========================================================================
+   Quick Actions Section
+   ========================================================================== */
+.actionSection {
+  margin: 40px 0 60px;
+}
+
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.actionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 20px;
+  padding: 24px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.actionCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px 0 rgba(60,64,67,0.08), 0 1px 3px 0 rgba(60,64,67,0.12);
+  border-color: var(--pcs-neutral-300);
+}
+
+.actionIcon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.actionCard:hover .actionIcon {
+  transform: scale(1.08) rotate(5deg);
+}
+
+/* Pastel backgrounds for action icons */
+.actionGrid > a:nth-child(1) .actionIcon {
+  background: var(--pcs-brand-primary-light); /* Mint Green originally */
+}
+.actionGrid > a:nth-child(2) .actionIcon {
+  background: var(--pcs-brand-primary-light); /* Google Blue */
+}
+.actionGrid > a:nth-child(3) .actionIcon {
+  background: var(--pcs-status-warning-bg); /* Warm Yellow/Orange */
+}
+.actionGrid > a:nth-child(4) .actionIcon {
+  background: var(--pcs-brand-primary-light); /* Soft Purple */
+}
+
+.actionContent h3 {
+  margin: 0 0 6px;
+  color: var(--pcs-neutral-900);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.actionContent p {
+  margin: 0;
+  color: var(--pcs-neutral-600);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Featured Sections (Courts & Coaches)
+   ========================================================================== */
+.featureSection {
+  margin-top: 64px;
+}
+
+.sectionTitleRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--pcs-neutral-100);
+  padding-bottom: 16px;
+}
+
+.sectionTitleRow h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--pcs-neutral-900);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.sectionTitleRow a {
+  color: var(--pcs-brand-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sectionTitleRow a:hover {
+  color: var(--pcs-brand-primary-hover);
+}
+
+/* Court Grid & Cards */
+.courtGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.courtCard {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.courtCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px 0 rgba(60,64,67,0.12), 0 1px 3px 0 rgba(60,64,67,0.15);
+  border-color: var(--pcs-neutral-300);
+}
+
+.courtImage {
+  height: 160px;
+  overflow: hidden;
+  background: var(--pcs-neutral-50);
+  position: relative;
+}
+
+.courtImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.courtCard:hover .courtImage img {
+  transform: scale(1.05);
+}
+
+.courtBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.courtTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.courtTitleRow h3 {
+  color: var(--pcs-neutral-900);
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rating {
+  color: var(--pcs-status-warning);
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: var(--pcs-status-warning-bg);
+  padding: 2px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.location {
+  color: var(--pcs-neutral-600);
+  font-size: 13px;
+  margin: 0 0 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.price {
+  font-size: 20px;
+  color: var(--pcs-status-success);
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.price small {
+  color: var(--pcs-neutral-600);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.tags span {
+  background: var(--pcs-neutral-100);
+  color: var(--pcs-neutral-800);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.detailLink {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  border-radius: 19px;
+  background: var(--pcs-brand-primary);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: all 0.2s ease;
+}
+
+.detailLink:hover {
+  background: var(--pcs-brand-primary-hover);
+  box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+}
+
+/* ==========================================================================
+   Coach Section
+   ========================================================================== */
+.coachGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.coachCard {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.coachCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px 0 rgba(60,64,67,0.12), 0 1px 3px 0 rgba(60,64,67,0.15);
+  border-color: var(--pcs-neutral-300);
+}
+
+.coachImage {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  background: var(--pcs-neutral-50);
+}
+
+.coachImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.coachCard:hover .coachImage img {
+  transform: scale(1.05);
+}
+
+/* Favorite float button */
+.coachImage button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--pcs-neutral-600);
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(60,64,67,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.coachImage button:hover {
+  color: var(--pcs-status-error);
+  background: var(--pcs-status-error-bg);
+  border-color: var(--pcs-status-error-bg);
+  transform: scale(1.08);
+}
+
+.coachInfo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.coachTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.coachTitleRow h3 {
+  color: var(--pcs-neutral-900);
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.coachMeta {
+  color: var(--pcs-neutral-600);
+  font-size: 13px;
+  margin: 0 0 6px;
+  font-weight: 500;
+}
+
+.coachDesc {
+  color: var(--pcs-neutral-600);
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0 0 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 40px;
+}
+
+/* ==========================================================================
+   Promotions & Testimonials Side-by-Side Layout
+   ========================================================================== */
+.promoReviewLayout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  margin-top: 64px;
+  align-items: start;
+}
+
+/* Promotions Area */
+.promo {
+  background: var(--pcs-neutral-50);
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 1px 3px 0 rgba(60,64,67,0.05);
+}
+
+.promoHeader {
+  margin-bottom: 24px;
+}
+
+.promoHeader span {
+  display: inline-block;
+  background: var(--pcs-status-success-bg);
+  color: var(--pcs-status-success);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 8px;
+}
+
+.promoHeader h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--pcs-neutral-900);
+  margin: 0 0 4px;
+}
+
+.promoHeader p {
+  color: var(--pcs-neutral-600);
+  font-size: 14px;
+  margin: 0;
+}
+
+.promoStatus {
+  text-align: center;
+  color: var(--pcs-neutral-600);
+  font-style: italic;
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+.voucherGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Ticket/Voucher Card Redesign */
+.voucherCard {
+  display: flex;
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.08);
+  position: relative;
+  height: 110px;
+  transition: all 0.25s ease;
+}
+
+.voucherCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px 0 rgba(60,64,67,0.1);
+  border-color: var(--pcs-neutral-300);
+}
+
+.voucherLeft {
+  flex: 0 0 110px;
+  background: var(--pcs-brand-primary);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+}
+
+.voucherDiscount {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.voucherMinOrder {
+  font-size: 10px;
+  opacity: 0.9;
+}
+
+/* Ticket tear line */
+.voucherDivider {
+  width: 16px;
+  position: relative;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dividerDotTop,
+.dividerDotBottom {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--pcs-neutral-50); /* Matches .promo background */
+  border: 1px solid var(--pcs-neutral-200);
+}
+
+.dividerDotTop {
+  top: -8px;
+  clip-path: circle(50% at 50% 100%);
+}
+
+.dividerDotBottom {
+  bottom: -8px;
+  clip-path: circle(50% at 50% 0%);
+}
+
+.dividerLine {
+  height: 70%;
+  border-left: 1px dashed var(--pcs-neutral-200);
+}
+
+.voucherRight {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+}
+
+.voucherName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pcs-neutral-900);
+  margin: 0;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.voucherActionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.voucherCode {
+  font-family: Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pcs-status-success);
+  background: var(--pcs-status-success-bg);
+  border: 1px dashed var(--pcs-status-success);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.copyBtn,
+.copyBtnSuccess {
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copyBtn {
+  background: var(--pcs-brand-primary-light);
+  color: var(--pcs-brand-primary);
+}
+
+.copyBtn:hover {
+  background: var(--pcs-brand-primary-light);
+  color: var(--pcs-brand-primary-hover);
+}
+
+.copyBtnSuccess {
+  background: var(--pcs-status-success-bg);
+  color: var(--pcs-status-success);
+  cursor: default;
+}
+
+/* Testimonials / Customer Reviews */
+.testimonials {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewSummary {
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--pcs-neutral-100);
+  padding-bottom: 16px;
+}
+
+.reviewSummary span {
+  display: inline-block;
+  background: var(--pcs-status-warning-bg);
+  color: var(--pcs-status-warning);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 8px;
+}
+
+.reviewSummary h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--pcs-neutral-900);
+  margin: 0 0 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.reviewSummary h2 small {
+  font-size: 16px;
+  color: var(--pcs-neutral-600);
+  font-weight: 400;
+}
+
+.reviewSummary p {
+  color: var(--pcs-neutral-600);
+  font-size: 14px;
+  margin: 0;
+}
+
+.reviewGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reviewCard {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.05);
+  transition: border-color 0.2s ease;
+}
+
+.reviewCard:hover {
+  border-color: var(--pcs-neutral-300);
+}
+
+.reviewStars {
+  color: var(--pcs-status-warning);
+  font-size: 15px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.starFilled {
+  color: var(--pcs-status-warning);
+}
+
+.starEmpty {
+  color: var(--pcs-neutral-200);
+}
+
+.reviewComment {
+  color: var(--pcs-neutral-900);
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.reviewAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--pcs-brand-primary-light);
+  color: var(--pcs-brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.reviewAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reviewAuthor strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--pcs-neutral-900);
+  font-weight: 600;
+}
+
+.reviewAuthor small {
+  display: block;
+  font-size: 12px;
+  color: var(--pcs-neutral-600);
+}
+
+/* ==========================================================================
+   Error/Empty states
+   ========================================================================== */
+.error {
+  color: var(--pcs-status-error);
+  background: var(--pcs-status-error-bg);
+  border: 1px solid var(--pcs-status-error-bg);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .courtGrid,
+  .coachGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroCard {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContent {
+    padding: 40px;
+  }
+
+  .heroImageWrapper {
+    min-height: 300px;
+  }
+
+  .actionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .promoReviewLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .courtGrid,
+  .coachGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    padding: 32px 16px 60px;
+  }
+
+  .heroContent {
+    padding: 32px 20px;
+  }
+
+  .heroContent h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .courtGrid,
+  .coachGrid,
+  .actionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+
+  .voucherCard {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .voucherLeft {
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .voucherDivider {
+    width: 100%;
+    height: 16px;
+    flex-direction: row;
+  }
+
+  .dividerDotTop {
+    left: -8px;
+    top: auto;
+    clip-path: circle(50% at 100% 50%);
+  }
+
+  .dividerDotBottom {
+    right: -8px;
+    bottom: auto;
+    clip-path: circle(50% at 0% 50%);
+  }
+
+  .dividerLine {
+    width: 70%;
+    height: 1px;
+    border-top: 1px dashed var(--pcs-neutral-200);
+    border-left: none;
+  }
+}
