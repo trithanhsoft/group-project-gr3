@@ -25,7 +25,12 @@ export default defineWorkspace([
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './frontend/src'),
+        'next/link': path.resolve(__dirname, './frontend/tests/ui/__mocks__/next-link.tsx'),
+        'react': path.resolve(__dirname, './node_modules/react'),
+        'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+        'react/jsx-runtime': path.resolve(__dirname, './node_modules/react/jsx-runtime.js'),
       },
+      dedupe: ['react', 'react-dom'],
     },
     esbuild: {
       jsx: 'automatic',

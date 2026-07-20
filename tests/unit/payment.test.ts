@@ -96,12 +96,12 @@ describe('Payment & Refund Service Unit Tests', () => {
   });
 
   describe('calculateRefundAmount()', () => {
-    // Helper to format a local machine future Date to YYYY-MM-DD and HH:mm
+    // Helper to format a future Date in UTC+7, matching refund service parsing.
     const getFutureStrings = (hoursAhead: number) => {
-      const futureDate = new Date(Date.now() + hoursAhead * 60 * 60 * 1000);
+      const futureDate = new Date(Date.now() + (hoursAhead + 7) * 60 * 60 * 1000);
       const pad = (n: number) => String(n).padStart(2, '0');
-      const dateStr = `${futureDate.getFullYear()}-${pad(futureDate.getMonth() + 1)}-${pad(futureDate.getDate())}`;
-      const timeStr = `${pad(futureDate.getHours())}:${pad(futureDate.getMinutes())}`;
+      const dateStr = `${futureDate.getUTCFullYear()}-${pad(futureDate.getUTCMonth() + 1)}-${pad(futureDate.getUTCDate())}`;
+      const timeStr = `${pad(futureDate.getUTCHours())}:${pad(futureDate.getUTCMinutes())}`;
       return { dateStr, timeStr };
     };
 
