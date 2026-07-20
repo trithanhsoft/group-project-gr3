@@ -1,14 +1,13 @@
 {
   "scripts": {
     "test": "vitest run",
-    "test:json": "vitest run --reporter=json --outputFile=tmp/vitest-results-current.json",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:dashboard": "npx tsx scripts/generate-dashboard-data.ts",
     "dashboard:build": "npm run --prefix test-dashboard-src build",
     "dashboard": "node scripts/serve-dashboard.js",
     "dashboard:dev": "npm run --prefix test-dashboard-src dev",
-    "report": "npm run test:json && npm run test:coverage && npm run test:dashboard"
+    "report": "npm run test && npm run test:coverage && npm run test:dashboard"
   },
   "dependencies": {
     "@react-oauth/google": "^0.13.5",

@@ -132,31 +132,17 @@ interface DashboardData {
   };
 }
 
-const pathToTab: Record<string, string> = {
-  "/test-cases": "execution",
-  "/reports": "reports"
-};
-
-const tabToPath: Record<string, string> = {
-  overview: "/",
-  execution: "/test-cases",
-  reports: "/reports"
-};
-
-function getTabFromLocation() {
-  return pathToTab[window.location.pathname] || "overview";
-}
-
 export default function App() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState(getTabFromLocation);
+  const [activeTab, setActiveTab] = useState("overview");
 
   // Filters & Page Controls for Executions
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("ALL");
   const [priorityFilter, setPriorityFilter] = useState("ALL");
   const [execPage, setExecPage] = useState(1);
+  const itemsPerPage = 8;
 
   // Selected Defect Modal
   const [selectedDefect, setSelectedDefect] = useState<Defect | null>(null);
@@ -179,15 +165,6 @@ export default function App() {
         console.error("Error loading dashboard data:", err);
         setLoading(false);
       });
-  }, []);
-
-  useEffect(() => {
-    const handlePopState = () => {
-      setActiveTab(getTabFromLocation());
-    };
-
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
   if (loading) {
@@ -223,8 +200,8 @@ export default function App() {
     return matchesSearch && matchesStatus && matchesPriority;
   });
 
-  const totalPages = 1;
-  const paginatedExecs = filteredExecs;
+  const totalPages = Math.ceil(filteredExecs.length / itemsPerPage) || 1;
+  const paginatedExecs = filteredExecs.slice((execPage - 1) * itemsPerPage, execPage * itemsPerPage);
 
   // RTM filtered
   const filteredRtm = rtm.filter((row) =>
@@ -298,7 +275,6 @@ export default function App() {
               <button
                 key={tab.id}
                 onClick={() => {
-                  window.history.pushState(null, "", tabToPath[tab.id] || "/");
                   setActiveTab(tab.id);
                   setSearchTerm("");
                   setStatusFilter("ALL");
@@ -405,7 +381,7 @@ export default function App() {
                   </div>
                   <div className="flex justify-around text-center text-xs">
                     <div>
-                      <h4 className="text-emerald-400 font-bold text-base">{ov.total}</h4>
+                      <h4 className="text-emerald-400 font-bold text-base">53</h4>
                       <p className="text-gray-500">Automated TCs</p>
                     </div>
                     <div className="border-l border-slate-800"></div>
@@ -618,7 +594,7 @@ export default function App() {
 
                 {/* Pagination Controls */}
                 <div className="p-4 bg-slate-900/40 border-t border-slate-800 flex items-center justify-between text-xs">
-                  <span className="text-gray-500">Showing {filteredExecs.length > 0 ? 1 : 0} to {filteredExecs.length} of {filteredExecs.length} entries</span>
+                  <span className="text-gray-500">Showing {Math.min(filteredExecs.length, (execPage-1)*itemsPerPage+1)} to {Math.min(filteredExecs.length, execPage*itemsPerPage)} of {filteredExecs.length} entries</span>
                   
                   <div className="flex gap-2">
                     <button
@@ -978,22 +954,8 @@ export default function App() {
                 <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Báo cáo & Workbook Downloads</h3>
                 <p className="text-xs text-gray-400">Tải xuống các tệp tin cấu hình và tài liệu kiểm thử chi tiết phục vụ báo cáo đồ án và kiểm thử.</p>
                 
-                <div className="bg-slate-900/50 p-5 rounded-xl border border-emerald-500/20 flex justify-between items-center">
-                  <div>
-                    <h4 className="font-bold text-sm text-gray-200">Dashboard Test Case URL</h4>
-                    <p className="text-[11px] text-gray-500 mt-1">Open the current automated test case table inside this dashboard.</p>
-                  </div>
-                  <a
-                    href="/test-cases"
-                    className="px-3.5 py-1.5 bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 font-bold rounded-lg border border-emerald-500/30 inline-flex items-center gap-1.5 text-xs transition-all"
-                  >
-                    <Eye size={13} /> Open
-                  </a>
-                </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { name: "ALL_TEST_CASES_REPORT.md", desc: "Full generated list of current dashboard test cases", link: "ALL_TEST_CASES_REPORT.md" },
                     { name: "FEATURE_MATRIX.md", desc: "Bảng ma trận ánh xạ module và API", link: "FEATURE_MATRIX.md" },
                     { name: "TEST_DATA_REPORT.md", desc: "Bảng tổng hợp dữ liệu đầu vào và kỳ vọng", link: "TEST_DATA_REPORT.md" },
                     { name: "TEST_EXECUTION_REPORT.md", desc: "Chi tiết các ca kiểm thử chạy thực tế", link: "TEST_EXECUTION_REPORT.md" },

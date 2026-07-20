@@ -4,7 +4,6 @@ import path from 'path';
 // Target paths
 const workspaceRoot = path.resolve(__dirname, '..');
 const coveragePath = path.join(workspaceRoot, 'coverage/coverage-summary.json');
-const vitestResultsPath = path.join(workspaceRoot, 'tmp/vitest-results-current.json');
 const dashboardDir = path.join(workspaceRoot, 'test-dashboard');
 const dataJsonPath = path.join(dashboardDir, 'dashboard-data.json');
 
@@ -78,197 +77,6 @@ interface ExecutionRow {
   status: string;
   file: string;
 }
-
-type TestTypes = {
-  unit: number;
-  api: number;
-  ui: number;
-  integration: number;
-};
-
-type DashboardOverview = typeof overview;
-
-interface VitestDashboardData {
-  overview: DashboardOverview;
-  testTypes: TestTypes;
-  modules: Record<string, number>;
-  executions: ExecutionRow[];
-}
-
-const generatedTestFiles = new Set([
-  'tests/unit/validation.extended.test.ts',
-  'frontend/tests/ui/frontend-utils.extended.test.tsx',
-  'tests/unit/matching-playgroups.extended.test.ts'
-]);
-
-function toWorkspaceRelativePath(fileName: string): string {
-  const normalizedFile = fileName.replace(/\\/g, '/');
-  const normalizedRoot = workspaceRoot.replace(/\\/g, '/');
-
-  if (normalizedFile.startsWith(`${normalizedRoot}/`)) {
-    return normalizedFile.slice(normalizedRoot.length + 1);
-  }
-
-  return path.relative(workspaceRoot, fileName).replace(/\\/g, '/');
-}
-
-function extractCaseId(title: string): string {
-  return title.match(/\bTC_[A-Z0-9_]+\b/)?.[0] || '';
-}
-
-function cleanScenario(title: string, caseId: string): string {
-  let scenario = title;
-
-  if (caseId) {
-    scenario = scenario.replace(new RegExp(`^${caseId}:?\\s*`), '');
-  }
-
-  scenario = scenario.replace(/\s+/g, ' ').trim();
-
-  if (!scenario) {
-    scenario = title.replace(/\s+/g, ' ').trim();
-  }
-
-  return scenario.length > 120 ? `${scenario.slice(0, 117)}...` : scenario;
-}
-
-function getTestLevel(relativePath: string): 'Unit' | 'API Integration' | 'UI Component' {
-  if (relativePath.startsWith('tests/api/')) return 'API Integration';
-  if (relativePath.startsWith('frontend/tests/ui/')) return 'UI Component';
-  return 'Unit';
-}
-
-function getModuleName(relativePath: string, fullName: string, caseId: string): string {
-  const lookup = `${relativePath} ${fullName} ${caseId}`.toLowerCase();
-
-  if (caseId.includes('VAL_')) return 'Validation Rules';
-  if (caseId.includes('MATCH_')) return 'Player Matching';
-  if (caseId.includes('GROUP_')) return 'Playgroups';
-  if (lookup.includes('frontend-utils')) return 'Frontend Utilities';
-  if (lookup.includes('login.ui')) return 'Login UI';
-  if (lookup.includes('auth') || lookup.includes('user')) return 'User/Auth';
-  if (lookup.includes('booking')) return 'Booking';
-  if (lookup.includes('court')) return 'Court';
-  if (lookup.includes('coach')) return 'Coach';
-  if (lookup.includes('payment')) return 'Payment';
-  if (lookup.includes('refund')) return 'Refund';
-  if (lookup.includes('promotion')) return 'Promotion';
-  if (lookup.includes('review')) return 'Review';
-  if (lookup.includes('notification')) return 'Notification';
-  if (lookup.includes('matching')) return 'Player Matching';
-  if (lookup.includes('playgroup')) return 'Playgroups';
-  if (lookup.includes('ai')) return 'AI Assistant';
-  if (lookup.includes('report')) return 'Reports & Admin';
-  if (lookup.includes('placeholder')) return 'Project Sanity';
-
-  return 'General';
-}
-
-function getPriority(level: string, moduleName: string, scenario: string): string {
-  const lookup = `${moduleName} ${scenario}`.toLowerCase();
-
-  if (level === 'API Integration') return 'HIGH';
-  if (lookup.match(/payment|refund|booking|auth|login|token|unauthorized|forbidden|expired|conflict/)) return 'HIGH';
-  if (level === 'UI Component') return 'LOW';
-  if (lookup.match(/validation|matching|playgroup|court|coach|promotion|review|notification|report|admin/)) return 'MEDIUM';
-
-  return 'LOW';
-}
-
-function getExpectedResult(scenario: string): string {
-  if (scenario.match(/reject|invalid|missing|forbid|block|not allow|duplicate|empty|negative|too short|too long|unauthorized|not found|expired/i)) {
-    return 'System rejects invalid input and returns a controlled validation result.';
-  }
-
-  if (scenario.match(/accept|valid|allow|return|create|update|delete|calculate|map|normalize|format|render/i)) {
-    return 'System returns the expected successful result.';
-  }
-
-  return 'Assertion result matches the implemented business rule.';
-}
-
-function buildVitestDashboardData(): VitestDashboardData | null {
-  if (!fs.existsSync(vitestResultsPath)) {
-    return null;
-  }
-
-  try {
-    const raw = JSON.parse(fs.readFileSync(vitestResultsPath, 'utf8'));
-    const vitestExecutions: ExecutionRow[] = [];
-    const vitestTestTypes: TestTypes = { unit: 0, api: 0, ui: 0, integration: 0 };
-    const vitestModules: Record<string, number> = {};
-    const endTimes: number[] = [];
-
-    (raw.testResults || []).forEach((suite: any) => {
-      const relativePath = toWorkspaceRelativePath(suite.name || '');
-      const level = getTestLevel(relativePath);
-
-      if (suite.endTime) {
-        endTimes.push(Number(suite.endTime));
-      }
-
-      (suite.assertionResults || []).forEach((assertion: any, index: number) => {
-        const sourceCaseId = extractCaseId(assertion.title || assertion.fullName || '');
-        const generatedId = `TC_AUTO_${String(vitestExecutions.length + 1).padStart(3, '0')}`;
-        const tcId = sourceCaseId || generatedId;
-        const scenario = cleanScenario(assertion.title || assertion.fullName || tcId, sourceCaseId);
-        const moduleName = getModuleName(relativePath, assertion.fullName || assertion.title || '', sourceCaseId);
-        const duration = Number(assertion.duration ?? 0);
-        const status = assertion.status === 'passed' ? 'Pass' : assertion.status === 'failed' ? 'Fail' : 'Skipped';
-        const expected = getExpectedResult(scenario);
-
-        if (level === 'API Integration') vitestTestTypes.api += 1;
-        else if (level === 'UI Component') vitestTestTypes.ui += 1;
-        else vitestTestTypes.unit += 1;
-
-        vitestModules[moduleName] = (vitestModules[moduleName] || 0) + 1;
-
-        vitestExecutions.push({
-          tcId,
-          module: moduleName,
-          scenario,
-          priority: getPriority(level, moduleName, scenario),
-          expected,
-          actual: status === 'Pass' ? expected : (assertion.failureMessages || []).join(' ').slice(0, 180),
-          time: `${duration.toFixed(2)}ms`,
-          status,
-          file: generatedTestFiles.has(relativePath) ? `${relativePath} (new)` : relativePath
-        });
-      });
-    });
-
-    if (vitestExecutions.length === 0) {
-      return null;
-    }
-
-    const total = Number(raw.numTotalTests ?? vitestExecutions.length);
-    const passed = Number(raw.numPassedTests ?? vitestExecutions.filter(item => item.status === 'Pass').length);
-    const failed = Number(raw.numFailedTests ?? vitestExecutions.filter(item => item.status === 'Fail').length);
-    const skipped = Number(raw.numPendingTests ?? 0) + Number(raw.numTodoTests ?? 0);
-    const passRate = total > 0 ? (passed / total) * 100 : 0;
-    const latestEnd = endTimes.length > 0 ? Math.max(...endTimes) : Number(raw.startTime ?? Date.now());
-    const elapsedMs = Math.max(latestEnd - Number(raw.startTime ?? latestEnd), 0);
-
-    return {
-      overview: {
-        total,
-        passed,
-        failed,
-        blocked: skipped,
-        skipped,
-        passRate: `${passRate.toFixed(2)}%`,
-        executionTime: `${(elapsedMs / 1000).toFixed(2)}s`
-      },
-      testTypes: vitestTestTypes,
-      modules: vitestModules,
-      executions: vitestExecutions
-    };
-  } catch (err) {
-    console.warn('Failed to parse tmp/vitest-results-current.json, falling back to markdown reports.', err);
-    return null;
-  }
-}
-
 const executions: ExecutionRow[] = [];
 const execPath = path.join(workspaceRoot, 'TEST_EXECUTION_REPORT.md');
 if (fs.existsSync(execPath)) {
@@ -415,7 +223,7 @@ if (fs.existsSync(rtmPath)) {
 }
 
 // 6. Test Suite Allocation allocation count
-let testTypes: TestTypes = {
+const testTypes = {
   unit: 41,
   api: 9,
   ui: 3,
@@ -423,7 +231,7 @@ let testTypes: TestTypes = {
 };
 
 // 7. Modules count based on RTM
-let modules: Record<string, number> = {
+const modules: Record<string, number> = {
   "User": 4,
   "Court": 7,
   "Booking": 3,
@@ -436,15 +244,6 @@ let modules: Record<string, number> = {
   "AI Assistant": 2,
   "Matching": 8
 };
-
-const vitestDashboardData = buildVitestDashboardData();
-if (vitestDashboardData) {
-  overview = vitestDashboardData.overview;
-  testTypes = vitestDashboardData.testTypes;
-  modules = vitestDashboardData.modules;
-  executions.splice(0, executions.length, ...vitestDashboardData.executions);
-  console.log(`Loaded ${executions.length} test cases from tmp/vitest-results-current.json.`);
-}
 
 // 8. Load existing history and update
 let history: any[] = [];
@@ -497,50 +296,6 @@ const finalData = {
   }
 };
 
-function markdownCell(value: unknown): string {
-  return String(value ?? '')
-    .replace(/\r?\n/g, ' ')
-    .replace(/\|/g, '\\|')
-    .trim();
-}
-
-function buildAllTestCasesReport(): string {
-  const generatedCount = finalData.recentExecutions.filter(row => row.file.includes('(new)')).length;
-  const lines = [
-    '# All Dashboard Test Cases Report',
-    '',
-    `- Project: ${finalData.metadata.project}`,
-    `- Total test cases: ${finalData.overview.total}`,
-    `- Passed: ${finalData.overview.passed}`,
-    `- Failed: ${finalData.overview.failed}`,
-    `- Pass rate: ${finalData.overview.passRate}`,
-    `- Execution time: ${finalData.overview.executionTime}`,
-    `- Newly added automated test cases: ${generatedCount}`,
-    `- Dashboard URL: /test-cases`,
-    `- Last updated: ${finalData.metadata.lastUpdated}`,
-    '',
-    '| # | TC_ID | Module | Priority | Scenario | Expected | Actual | Time | Status | File |',
-    '|---|---|---|---|---|---|---|---|---|---|'
-  ];
-
-  finalData.recentExecutions.forEach((row, index) => {
-    lines.push([
-      index + 1,
-      markdownCell(row.tcId),
-      markdownCell(row.module),
-      markdownCell(row.priority),
-      markdownCell(row.scenario),
-      markdownCell(row.expected),
-      markdownCell(row.actual),
-      markdownCell(row.time),
-      markdownCell(row.status),
-      markdownCell(row.file)
-    ].join(' | ').replace(/^/, '| ').replace(/$/, ' |'));
-  });
-
-  return `${lines.join('\n')}\n`;
-}
-
 fs.writeFileSync(dataJsonPath, JSON.stringify(finalData, null, 2), 'utf8');
 console.log('✅ Generated dashboard-data.json at:', dataJsonPath);
 
@@ -551,11 +306,6 @@ if (!fs.existsSync(devPublicDir)) {
 const devDataJsonPath = path.join(devPublicDir, 'dashboard-data.json');
 fs.writeFileSync(devDataJsonPath, JSON.stringify(finalData, null, 2), 'utf8');
 console.log('✅ Synchronized dev dashboard-data.json at:', devDataJsonPath);
-
-const allTestCasesReport = buildAllTestCasesReport();
-fs.writeFileSync(path.join(dashboardDir, 'ALL_TEST_CASES_REPORT.md'), allTestCasesReport, 'utf8');
-fs.writeFileSync(path.join(devPublicDir, 'ALL_TEST_CASES_REPORT.md'), allTestCasesReport, 'utf8');
-console.log('✅ Generated ALL_TEST_CASES_REPORT.md for dashboard downloads.');
 
 // Copy workbook report files to test-dashboard & dev public directory to make downloads work
 const reportFiles = [
