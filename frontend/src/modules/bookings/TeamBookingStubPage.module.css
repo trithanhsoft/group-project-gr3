@@ -1,0 +1,651 @@
+.page {
+  min-height: 100vh;
+  background: var(--pcs-neutral-50);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--pcs-spacing-xl) var(--pcs-spacing-md);
+  font-family: inherit;
+  color: var(--pcs-neutral-900);
+}
+
+/* Stub card & containers */
+.stubCard,
+.formCard,
+.resultCard {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-lg);
+  padding: var(--pcs-spacing-xl);
+  width: 100%;
+  box-shadow: var(--pcs-shadow-sm);
+  margin-top: var(--pcs-spacing-md);
+}
+
+.stubCard {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pcs-spacing-lg);
+}
+
+.formCard {
+  max-width: 600px;
+}
+
+.resultCard {
+  max-width: 480px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Typography */
+.stubIcon {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: -0.5rem;
+}
+
+.stubTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  color: var(--pcs-brand-primary-hover);
+}
+
+.stubDesc {
+  text-align: center;
+  color: var(--pcs-neutral-500);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Flow diagram */
+.flowDiagram {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1.25rem;
+  background: var(--pcs-neutral-50);
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flowStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  border-radius: var(--pcs-radius-md);
+  min-width: 110px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.flowDone {
+  background: var(--pcs-status-success-bg);
+  border-color: var(--pcs-brand-primary-border);
+}
+
+.flowPending {
+  background: #ffffff;
+  border-color: var(--pcs-neutral-200);
+}
+
+.flowCurrent {
+  background: var(--pcs-status-success-bg);
+  border-color: var(--pcs-status-success);
+}
+
+.flowIcon {
+  font-size: 1.25rem;
+}
+
+.flowLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pcs-neutral-700);
+}
+
+.flowNote {
+  font-size: 0.7rem;
+  color: var(--pcs-neutral-500);
+  line-height: 1.2;
+}
+
+.flowArrow {
+  color: var(--pcs-neutral-300);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Waiting banner */
+.waitingBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--pcs-spacing-md);
+  background: var(--pcs-neutral-50);
+  border-left: 4px solid var(--pcs-status-warning);
+  border-radius: 0 var(--pcs-radius-md) var(--pcs-radius-md) 0;
+  padding: var(--pcs-spacing-md);
+}
+
+.waitingIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.waitingBanner strong {
+  color: var(--pcs-neutral-700);
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.waitingBanner p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--pcs-neutral-500);
+  line-height: 1.5;
+}
+
+.waitingBanner code {
+  background: var(--pcs-neutral-200);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* BR list */
+.brList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.brList h3 {
+  font-size: 0.9rem;
+  color: var(--pcs-neutral-700);
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+}
+
+.brItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  padding: 0.75rem;
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: 6px;
+  color: var(--pcs-neutral-600);
+  line-height: 1.4;
+}
+
+.brId {
+  background: var(--pcs-neutral-100);
+  color: var(--pcs-neutral-600);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Actions & Buttons */
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.btnBack, .btnDemo, .btnSubmit, .btnDone, .backBtn {
+  font-family: inherit;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnBack, .backBtn {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-300);
+  color: var(--pcs-neutral-600);
+  font-weight: 500;
+}
+
+.btnBack {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  font-size: 0.9rem;
+}
+
+.backBtn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.btnBack:hover, .backBtn:hover {
+  background: var(--pcs-neutral-100);
+  color: var(--pcs-neutral-900);
+}
+
+.btnBack:focus-visible, .backBtn:focus-visible,
+.btnDemo:focus-visible, .btnSubmit:focus-visible, .btnDone:focus-visible {
+  outline: none;
+  box-shadow: var(--pcs-focus-ring);
+}
+
+.btnDemo, .btnSubmit, .btnDone {
+  background: var(--pcs-brand-primary);
+  border: 1px solid var(--pcs-brand-primary-hover);
+  color: white;
+  font-weight: 600;
+}
+
+.btnDemo {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btnSubmit {
+  padding: 0.875rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btnDone {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.btnDemo:hover, .btnSubmit:hover:not(:disabled), .btnDone:hover {
+  background: var(--pcs-brand-primary-hover);
+}
+
+.btnSubmit:disabled {
+  background: var(--pcs-neutral-400);
+  border-color: var(--pcs-neutral-400);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Form layout */
+.formHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--pcs-neutral-200);
+}
+
+.formTitle {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.formTitle h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pcs-neutral-900);
+}
+
+.groupBadge {
+  background: var(--pcs-status-success-bg);
+  color: var(--pcs-brand-primary-hover);
+  border: 1px solid var(--pcs-brand-primary-border);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.groupInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--pcs-neutral-50);
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-md);
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.groupInfoIcon {
+  font-size: 1.25rem;
+  margin-top: 0.1rem;
+}
+
+.groupInfoTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pcs-neutral-700);
+  margin-bottom: 0.2rem;
+}
+
+.groupInfoNote {
+  font-size: 0.8rem;
+  color: var(--pcs-neutral-500);
+  line-height: 1.4;
+}
+
+.formBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pcs-neutral-800);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.formGroup label span {
+  color: var(--pcs-status-error);
+}
+
+.input {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-300);
+  border-radius: 6px;
+  color: var(--pcs-neutral-900);
+  font-size: 0.9rem;
+  padding: 0.625rem 0.75rem;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus, .select:focus {
+  outline: none;
+  border-color: var(--pcs-brand-primary);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.fieldNote {
+  font-size: 0.75rem;
+  color: var(--pcs-neutral-500);
+  margin: 0;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.errorBox {
+  background: var(--pcs-status-error-bg);
+  border-left: 4px solid var(--pcs-status-error);
+  border-radius: 0 6px 6px 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: #b91c1c;
+}
+
+.rules {
+  background: var(--pcs-neutral-50);
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ruleItem {
+  font-size: 0.8rem;
+  color: var(--pcs-neutral-600);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Court Grid UI */
+.courtGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pcs-spacing-md);
+  margin-top: 0.25rem;
+}
+
+.courtCard {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-lg);
+  padding: var(--pcs-spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--pcs-shadow-sm);
+}
+
+.courtCardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--pcs-neutral-100);
+  padding-bottom: 0.75rem;
+}
+
+.courtCode {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--pcs-neutral-500);
+  margin-left: 0.4rem;
+}
+
+.courtName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--pcs-neutral-900);
+  margin: 0;
+}
+
+.courtLocation {
+  font-size: 0.8rem;
+  color: var(--pcs-neutral-500);
+}
+
+.slotGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5rem;
+}
+
+.slotBadge {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-300);
+  border-radius: var(--pcs-radius-md);
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.slotBadge:hover {
+  border-color: var(--pcs-brand-primary);
+  background: var(--pcs-brand-primary-light);
+}
+
+.slotBadgeSelected {
+  background: var(--pcs-brand-primary-light);
+  border-color: var(--pcs-brand-primary);
+  box-shadow: 0 0 0 1px var(--pcs-brand-primary);
+}
+
+.slotTime {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pcs-neutral-800);
+}
+
+.slotPrice {
+  font-size: 0.75rem;
+  color: var(--pcs-brand-primary);
+  margin-top: 0.2rem;
+}
+
+.slotBadgeSelected .slotTime,
+.slotBadgeSelected .slotPrice {
+  color: var(--pcs-brand-primary-hover);
+}
+
+.statusMessage {
+  font-size: 0.85rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: var(--pcs-neutral-50);
+  color: var(--pcs-neutral-600);
+  border: 1px solid var(--pcs-neutral-200);
+}
+
+.statusError {
+  background: var(--pcs-status-error-bg);
+  color: #b91c1c;
+  border-color: var(--pcs-status-error-border);
+}
+
+.summaryBox {
+  background: var(--pcs-brand-primary-light);
+  border: 1px solid var(--pcs-brand-primary-border);
+  border-radius: var(--pcs-radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.summaryTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pcs-brand-primary-hover);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.summaryDetail {
+  font-size: 0.9rem;
+  color: var(--pcs-brand-primary-hover);
+}
+
+/* Result cards specifics */
+.successIcon {
+  font-size: 3rem;
+  margin-bottom: -0.5rem;
+}
+
+.errorIcon {
+  font-size: 3rem;
+  margin-bottom: -0.5rem;
+}
+
+.resultCard h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pcs-neutral-900);
+}
+
+.resultCard p {
+  margin: 0;
+  color: var(--pcs-neutral-600);
+  font-size: 0.95rem;
+}
+
+.bookingCode {
+  color: var(--pcs-brand-primary-hover);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: var(--pcs-brand-primary-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--pcs-brand-primary-border);
+}
+
+.notice {
+  background: var(--pcs-neutral-50);
+  border-left: 4px solid var(--pcs-status-info);
+  border-radius: 0 6px 6px 0;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: var(--pcs-neutral-800);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.notice a {
+  color: var(--pcs-status-info);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.notice a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .stubCard, .formCard, .resultCard {
+    padding: 1.25rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .courtGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

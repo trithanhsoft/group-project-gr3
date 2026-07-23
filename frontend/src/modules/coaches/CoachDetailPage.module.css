@@ -1,0 +1,918 @@
+/* CoachDetailPage.module.css */
+
+.page {
+  min-height: 100vh;
+  background-color: var(--pcs-neutral-50);
+  font-family: inherit;
+  padding: 0 0 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+
+/* Back Link Above Banner */
+.backBtnWrapper {
+  padding: 20px 0;
+}
+
+.backBtnLink {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pcs-neutral-600);
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.backBtnLink:hover {
+  color: var(--pcs-brand-primary);
+}
+
+/* Banner Section */
+.bannerSection {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  border-radius: var(--pcs-radius-xl);
+  background: var(--pcs-neutral-200);
+  margin-bottom: 24px;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Two-Column Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 66% 34%;
+  gap: 32px;
+  align-items: start;
+  margin-top: 16px;
+  position: relative;
+  z-index: 20;
+}
+
+/* Left Column Details */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Profile Header overlapping the banner */
+.profileHeader {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  flex-shrink: 0;
+  margin-top: -80px; /* Pulls up to overlap the banner */
+  z-index: 10;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.availableBadge {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--pcs-brand-primary);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 10px rgba(15, 138, 34, 0.25);
+  white-space: nowrap;
+}
+
+.profileMainInfo {
+  padding-top: 8px;
+  flex-grow: 1;
+}
+
+.coachName {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--pcs-neutral-900);
+  margin: 0 0 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: -0.02em;
+}
+
+.verifiedBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.coachTitle {
+  font-size: 15px;
+  color: var(--pcs-neutral-600);
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.coachSubBio {
+  font-size: 14px;
+  color: var(--pcs-neutral-600);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Stats Row with Grey Divider Lines */
+.statsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid var(--pcs-neutral-200);
+  border-bottom: 1px solid var(--pcs-neutral-200);
+  margin-bottom: 32px;
+  margin-top: 16px;
+}
+
+.statCell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-right: 1px solid var(--pcs-neutral-200);
+}
+
+.statCell:last-child {
+  border-right: none;
+}
+
+.statVal {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--pcs-neutral-900);
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.statLbl {
+  font-size: 12px;
+  color: var(--pcs-neutral-600);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Details Single Card */
+.detailsCard {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--pcs-neutral-900);
+  margin: 0 0 16px 0;
+}
+
+.bioText {
+  font-size: 14px;
+  color: var(--pcs-neutral-600);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Expertise pills */
+.expertisePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.expertisePill {
+  background: var(--pcs-brand-primary-light);
+  color: var(--pcs-brand-primary-hover);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 100px;
+  line-height: 1;
+}
+
+/* Experience checklist */
+.experienceList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.experienceList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--pcs-neutral-800);
+}
+
+.checkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--pcs-brand-primary-light);
+  color: var(--pcs-brand-primary);
+  flex-shrink: 0;
+}
+
+/* Reviews layout */
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.reviewsSummaryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+.ratingNumber {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--pcs-neutral-900);
+  line-height: 1.1;
+}
+
+.starsRow {
+  display: flex;
+  gap: 2px;
+  margin: 8px 0;
+}
+
+.reviewsSummaryCard small {
+  font-size: 13px;
+  color: var(--pcs-neutral-600);
+  font-weight: 500;
+}
+
+.reviewsListRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.reviewCommentCard {
+  background: var(--pcs-neutral-50);
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.authorRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.authorAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--pcs-neutral-200);
+  color: var(--pcs-neutral-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.authorAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.avatarInitials {
+  position: absolute;
+  z-index: 1;
+}
+
+.authorName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pcs-neutral-900);
+  word-break: break-word;
+}
+
+.reviewStarsMini {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.timeAgo {
+  font-size: 11px;
+  color: var(--pcs-neutral-500);
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.reviewText {
+  font-size: 12px;
+  color: var(--pcs-neutral-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.viewReviewsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.viewReviewsLink {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pcs-neutral-800);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  gap: 6px;
+}
+
+.viewReviewsLink:hover {
+  background: var(--pcs-neutral-50);
+  border-color: var(--pcs-neutral-300);
+  color: var(--pcs-neutral-900);
+}
+
+/* Right Column: Sticky Booking Card */
+.rightCol {
+  position: relative;
+}
+
+.bookingCard {
+  position: sticky;
+  top: 100px;
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-lg);
+  padding: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--pcs-brand-primary);
+}
+
+.unit {
+  font-size: 14px;
+  color: var(--pcs-neutral-600);
+  margin-left: 4px;
+}
+
+.lessonType {
+  font-size: 13px;
+  color: var(--pcs-neutral-800);
+  font-weight: 600;
+  background: var(--pcs-neutral-100);
+  padding: 6px 12px;
+  border-radius: var(--pcs-radius-md);
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.fieldGroup {
+  margin-bottom: 20px;
+}
+
+.fieldLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pcs-neutral-800);
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Custom Calendar styling */
+.calendarContainer {
+  background: #ffffff;
+  margin-top: 8px;
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.monthYearTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--pcs-neutral-900);
+  text-align: center;
+  flex-grow: 1;
+}
+
+.monthNavBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--pcs-neutral-600);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.monthNavBtn:hover {
+  background: var(--pcs-neutral-100);
+  color: var(--pcs-neutral-900);
+}
+
+.weekdayRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.weekdayRow span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--pcs-neutral-500);
+  text-transform: uppercase;
+}
+
+.calendarDaysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 8px;
+  column-gap: 4px;
+}
+
+.emptyDayCell {
+  aspect-ratio: 1;
+}
+
+.dayCell {
+  aspect-ratio: 1;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pcs-neutral-800);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.dayCell:hover:not(:disabled) {
+  background: var(--pcs-brand-primary-light);
+  color: var(--pcs-brand-primary);
+}
+
+.daySelected {
+  background: var(--pcs-brand-primary) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.dayPast {
+  color: var(--pcs-neutral-300);
+  cursor: not-allowed;
+}
+
+/* Hourly Slots Grid */
+.slotsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.slotsLoading,
+.slotsEmpty {
+  font-size: 13px;
+  color: var(--pcs-neutral-600);
+  text-align: center;
+  padding: 16px 0;
+  background: var(--pcs-neutral-50);
+  border-radius: var(--pcs-radius-md);
+  border: 1px solid var(--pcs-neutral-200);
+}
+
+.slotBtn {
+  height: 38px;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-md);
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pcs-neutral-800);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.slotBtn:hover {
+  border-color: var(--pcs-brand-primary);
+  color: var(--pcs-brand-primary);
+  background: var(--pcs-brand-primary-light);
+}
+
+.slotSelected {
+  border-color: var(--pcs-brand-primary) !important;
+  background: var(--pcs-brand-primary) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* Action Buttons */
+.bookNowBtn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: var(--pcs-radius-md);
+  background: var(--pcs-brand-primary);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  transition: background 0.2s;
+  box-shadow: 0 4px 15px rgba(15, 138, 34, 0.2);
+}
+
+.bookNowBtn:hover {
+  background: var(--pcs-brand-primary-hover);
+}
+
+.bookNowBtn:disabled {
+  background: var(--pcs-neutral-300);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.saveCoachBtn {
+  width: 100%;
+  height: 46px;
+  border: 1.5px solid var(--pcs-brand-primary);
+  border-radius: var(--pcs-radius-md);
+  background: #ffffff;
+  color: var(--pcs-brand-primary);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.saveCoachBtn:hover {
+  background: var(--pcs-brand-primary-light);
+}
+
+/* Reassurance Badges */
+.reassurance {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--pcs-neutral-200);
+  gap: 8px;
+}
+
+.reassuranceItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--pcs-neutral-600);
+  font-weight: 500;
+}
+
+.reassuranceItem svg {
+  color: var(--pcs-neutral-600);
+  flex-shrink: 0;
+}
+
+/* Bottom Section: Upcoming schedules */
+.upcomingSection {
+  margin-top: 48px;
+  margin-bottom: 60px;
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-lg);
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.upcomingSection h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--pcs-neutral-900);
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upcomingLoading {
+  text-align: center;
+  color: var(--pcs-neutral-600);
+  font-size: 14px;
+  padding: 24px;
+}
+
+.upcomingWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.upcomingGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.upcomingCol {
+  background: var(--pcs-neutral-50);
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.upcomingDayHeader {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--pcs-neutral-900);
+  text-align: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--pcs-neutral-200);
+}
+
+.upcomingSlotsWrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.upcomingNoSlots {
+  font-size: 12px;
+  color: var(--pcs-neutral-500);
+  text-align: center;
+  grid-column: span 2;
+  padding: 16px 0;
+  font-weight: 600;
+}
+
+.upcomingSlotBtn {
+  height: 36px;
+  border: 1px solid var(--pcs-neutral-200);
+  border-radius: var(--pcs-radius-md);
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pcs-neutral-800);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.upcomingSlotBtn:hover {
+  border-color: var(--pcs-brand-primary);
+  color: var(--pcs-brand-primary);
+  background: var(--pcs-brand-primary-light);
+}
+
+.upcomingNextBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--pcs-neutral-200);
+  background: #ffffff;
+  color: var(--pcs-neutral-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.upcomingNextBtn:hover {
+  background: var(--pcs-neutral-50);
+  border-color: var(--pcs-neutral-300);
+  color: var(--pcs-neutral-900);
+}
+
+/* General Loading state Page styles */
+.loadingPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pcs-neutral-50);
+}
+
+.backButton {
+  background: #ffffff;
+  border: 1px solid var(--pcs-neutral-300);
+  color: var(--pcs-neutral-800);
+  padding: 10px 20px;
+  border-radius: var(--pcs-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.backButton:hover {
+  background: var(--pcs-neutral-100);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookingCard {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .upcomingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerSection {
+    height: 240px;
+  }
+
+  .profileHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .avatarWrapper {
+    width: 140px;
+    height: 140px;
+    margin-top: -70px;
+  }
+
+  .avatar {
+    width: 130px;
+    height: 130px;
+  }
+
+  .coachName {
+    justify-content: center;
+    font-size: 26px;
+  }
+
+  .statsRow {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .statCell {
+    flex: unset;
+    width: 45%;
+    border-right: none;
+  }
+
+  .expertisePills {
+    justify-content: center;
+  }
+
+  .reviewsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviewsSummaryCard {
+    border-right: none;
+    border-bottom: 1px solid var(--pcs-neutral-200);
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .reviewsListRow {
+    grid-template-columns: 1fr;
+  }
+
+  .upcomingGrid {
+    grid-template-columns: 1fr;
+  }
+}

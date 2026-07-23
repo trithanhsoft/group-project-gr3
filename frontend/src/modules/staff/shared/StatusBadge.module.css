@@ -1,0 +1,18 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.confirmed { background: var(--pcs-status-success-bg); color: var(--pcs-status-success); }
+.checkedIn { background: var(--pcs-brand-primary-light); color: var(--pcs-brand-primary); }
+.completed { background: var(--pcs-neutral-100); color: var(--pcs-neutral-600); }
+.cancelled { background: var(--pcs-status-error-bg); color: var(--pcs-status-error); }
+.pending { background: var(--pcs-status-warning-bg); color: var(--pcs-status-warning); }
+.noShow { background: var(--pcs-status-error-bg); color: var(--pcs-status-error); }
+.refunded { background: var(--pcs-brand-primary-light); color: var(--pcs-brand-primary); }
+.default { background: var(--pcs-neutral-100); color: var(--pcs-neutral-600); }

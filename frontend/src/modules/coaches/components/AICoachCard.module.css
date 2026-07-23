@@ -1,0 +1,206 @@
+.card {
+  background: #ffffff;
+  border-radius: var(--pcs-radius-lg);
+  border: 1px solid var(--pcs-neutral-200);
+  padding: 16px;
+  box-shadow: var(--pcs-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--pcs-shadow-md);
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--pcs-radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.bestMatch {
+  background: var(--pcs-status-warning-bg, #fff8e6);
+  color: var(--pcs-status-warning);
+}
+.alternative {
+  background: #eff6ff;
+  color: var(--pcs-status-info, #1d4ed8);
+}
+.favoriteBtn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--pcs-neutral-500);
+  cursor: pointer;
+}
+.coachInfo {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--pcs-brand-primary-light);
+}
+.details {
+  flex: 1;
+  min-width: 0;
+}
+.name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pcs-neutral-900);
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.meta {
+  font-size: 0.8rem;
+  color: var(--pcs-neutral-600);
+  margin: 0 0 2px 0;
+}
+.specialization {
+  font-size: 0.8rem;
+  color: var(--pcs-neutral-700);
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  background: var(--pcs-brand-primary-light);
+  color: var(--pcs-brand-primary);
+  font-size: 0.7rem;
+  padding: 4px 6px;
+  border-radius: var(--pcs-radius-sm);
+  font-weight: 600;
+}
+.middleSection {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+.scoreSection {
+  margin-bottom: 0;
+}
+.scoreHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pcs-neutral-800);
+  margin-bottom: 6px;
+}
+.scoreValue {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--pcs-brand-primary);
+  margin-bottom: 6px;
+}
+.progressBg {
+  height: 6px;
+  background: var(--pcs-neutral-200);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--pcs-brand-primary), var(--pcs-status-success, #34d399));
+  border-radius: 3px;
+}
+.reasons {
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+.reasonsTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pcs-neutral-800);
+  margin-bottom: 6px;
+}
+.reasonItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--pcs-neutral-600);
+  margin-bottom: 4px;
+}
+.checkIcon {
+  color: var(--pcs-brand-primary);
+  font-weight: bold;
+}
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--pcs-neutral-200);
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pcs-brand-primary);
+  line-height: 1.2;
+}
+.price span {
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: var(--pcs-neutral-600);
+}
+.actions {
+  display: flex;
+  gap: 6px;
+}
+.btnView, .btnBook {
+  padding: 6px 12px;
+  border-radius: var(--pcs-radius-md);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btnView {
+  background: #ffffff;
+  color: var(--pcs-brand-primary);
+  border: 1px solid var(--pcs-brand-primary);
+}
+.btnView:hover {
+  background: var(--pcs-brand-primary-light);
+}
+.btnBook {
+  background: var(--pcs-brand-primary);
+  color: #ffffff;
+  border: 1px solid var(--pcs-brand-primary);
+}
+.btnBook:hover {
+  background: var(--pcs-brand-primary-hover);
+  border-color: var(--pcs-brand-primary-hover);
+}

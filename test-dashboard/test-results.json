@@ -1,0 +1,148 @@
+{
+  "overview": {
+    "total": 53,
+    "passed": 53,
+    "failed": 0,
+    "blocked": 0,
+    "passRate": "100.00%",
+    "executionTime": "3.88s"
+  },
+  "coverage": {
+    "statements": 92.5,
+    "branches": 88.75,
+    "functions": 95,
+    "lines": 92.5
+  },
+  "testTypes": {
+    "unit": 41,
+    "api": 9,
+    "ui": 3,
+    "integration": 0
+  },
+  "modules": {
+    "user": 10,
+    "court": 10,
+    "booking": 5,
+    "coach": 4,
+    "payment": 6,
+    "promotion": 2,
+    "review": 2,
+    "notification": 2,
+    "admin": 2,
+    "aiAssistant": 2,
+    "matching": 8
+  },
+  "defects": {
+    "total": 2,
+    "critical": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 0
+  },
+  "recentExecutions": [
+    {
+      "tcId": "TC_USR_01",
+      "module": "User & Auth",
+      "scenario": "Đăng ký tài khoản mới",
+      "expected": "Gửi mã OTP xác nhận đăng ký",
+      "actual": "Gửi mã OTP xác nhận đăng ký",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_USR_02",
+      "module": "User & Auth",
+      "scenario": "Đăng ký trùng email",
+      "expected": "Báo lỗi trùng email",
+      "actual": "Báo lỗi trùng email",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_USR_04",
+      "module": "User & Auth",
+      "scenario": "Xác thực OTP đăng ký",
+      "expected": "Trả về JWT token kích hoạt",
+      "actual": "Trả về JWT token kích hoạt",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_CRT_01",
+      "module": "Court",
+      "scenario": "Lấy danh sách sân hoạt động",
+      "expected": "Chỉ hiển thị sân active",
+      "actual": "Chỉ hiển thị sân active",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_CRT_05",
+      "module": "Court",
+      "scenario": "Lấy danh sách slots trống",
+      "expected": "Trả về 24 slot rảnh",
+      "actual": "Trả về 24 slot rảnh",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_BKG_01",
+      "module": "Booking",
+      "scenario": "Tạo mới đặt sân hợp lệ",
+      "expected": "Đặt sân thành công",
+      "actual": "Đặt sân thành công",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_BKG_02",
+      "module": "Booking",
+      "scenario": "Đặt sân trùng khung giờ",
+      "expected": "Báo lỗi trùng giờ chơi",
+      "actual": "Báo lỗi trùng giờ chơi",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_PAY_01",
+      "module": "Payment",
+      "scenario": "Tạo link thanh toán PayOS",
+      "expected": "Trả về link checkout",
+      "actual": "Trả về link checkout",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_PAY_02",
+      "module": "Payment",
+      "scenario": "Hủy lịch và hoàn tiền 100%",
+      "expected": "Tính toán hoàn tiền 100%",
+      "actual": "Tính toán hoàn tiền 100%",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_MAT_01",
+      "module": "Player Matching",
+      "scenario": "Ghép cặp tương khắc vai trò",
+      "expected": "Trả về điểm vai trò 100",
+      "actual": "Trả về điểm vai trò 100",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_AI_01",
+      "module": "AI Assistant",
+      "scenario": "Chatbot phân tích ý định đặt sân",
+      "expected": "Intent: court_booking",
+      "actual": "Intent: court_booking",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_API_09",
+      "module": "Payment API",
+      "scenario": "API Webhook PayOS xác nhận",
+      "expected": "Status 200, cập nhật Booking",
+      "actual": "Status 200, cập nhật Booking",
+      "status": "Pass"
+    },
+    {
+      "tcId": "TC_UI_01",
+      "module": "Login UI",
+      "scenario": "Kết xuất form đăng nhập",
+      "expected": "Renders LOGIN button & form",
+      "actual": "Renders LOGIN button & form",
+      "status": "Pass"
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+/* ── Overlay & Modal shell ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal {
+  background: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ── */
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid var(--pcs-neutral-100);
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--pcs-neutral-900);
+  margin: 0 0 4px 0;
+}
+
+.modalSub {
+  font-size: 13px;
+  color: var(--pcs-neutral-600);
+  margin: 0;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: var(--pcs-neutral-100);
+  font-size: 18px;
+  color: var(--pcs-neutral-600);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.closeBtn:hover:not(:disabled) { background: var(--pcs-neutral-200); }
+.closeBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Body ── */
+.modalBody {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* ── Role list ── */
+.roleList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.roleItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--pcs-neutral-200);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.roleItem:hover {
+  border-color: var(--pcs-brand-primary);
+  background: var(--pcs-status-error-bg);
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--pcs-brand-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.roleLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pcs-neutral-900);
+  flex: 1;
+}
+
+.roleSelected {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pcs-brand-primary-hover);
+  background: var(--pcs-brand-primary-light);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ── Form elements ── */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pcs-neutral-600);
+}
+
+.textarea {
+  border: 1.5px solid var(--pcs-neutral-200);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--pcs-neutral-900);
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.15s;
+}
+
+.textarea:focus {
+  border-color: var(--pcs-status-error);
+}
+
+.textarea:disabled {
+  background: var(--pcs-neutral-50);
+  color: var(--pcs-neutral-400);
+}
+
+/* ── Info / Warn boxes ── */
+.infoBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--pcs-status-success-bg);
+  border: 1px solid var(--pcs-status-success-bg);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--pcs-status-success);
+}
+
+.infoIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.warnBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--pcs-status-warning-bg);
+  border: 1px solid var(--pcs-status-warning-bg);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--pcs-status-warning);
+}
+
+.warnIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ── Footer ── */
+.modalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px 20px;
+  border-top: 1px solid var(--pcs-neutral-100);
+}
+
+.btnCancel {
+  padding: 9px 20px;
+  border: 1.5px solid var(--pcs-neutral-200);
+  background: var(--pcs-neutral-50);
+  color: var(--pcs-neutral-600);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnCancel:hover:not(:disabled) {
+  background: var(--pcs-neutral-100);
+  border-color: var(--pcs-neutral-200);
+}
+
+.btnCancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnPrimary {
+  padding: 9px 22px;
+  background: var(--pcs-brand-primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background: var(--pcs-brand-primary-hover);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnDanger {
+  padding: 9px 22px;
+  background: var(--pcs-status-error);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnDanger:hover:not(:disabled) {
+  background: var(--pcs-status-error);
+}
+
+.btnDanger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

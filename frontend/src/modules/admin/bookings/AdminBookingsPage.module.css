@@ -1,0 +1,662 @@
+/* ==========================================================================
+   AdminBookingsPage.module.css - Redesigned Bookings Page Aesthetics
+   ========================================================================== */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Sticky top header bar matching operations and refunds */
+.headerBar {
+  background: #ffffff;
+  height: 64px;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.chevron {
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.currentCrumb {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.headerCenter {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  max-width: 320px;
+  margin: 0 20px;
+}
+
+.searchBar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.searchBar svg {
+  position: absolute;
+  left: 12px;
+  color: #94a3b8;
+}
+
+.searchBar input {
+  width: 100%;
+  background: #f1f5f9;
+  border: none;
+  padding: 8px 12px 8px 34px;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  color: #334155;
+  transition: all 0.15s;
+}
+
+.searchBar input:focus {
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+  border: 1px solid #2563eb;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.datePicker {
+  padding: 6px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  outline: none;
+  background: #ffffff;
+  transition: all 0.15s ease;
+}
+
+.datePicker:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.btnIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnIcon:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #3b82f6;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+/* Scrollable Content Area */
+.contentArea {
+  background: #f8fafc;
+  padding: 24px 32px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: calc(100vh - 64px);
+}
+
+/* Stat Grid & Cards */
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .statGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.statCard {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 18px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.statIconBox {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 2px 0 0;
+  line-height: 1.1;
+  z-index: 2;
+}
+
+.sparklineWrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.sparkline {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stat_blue .statIconBox { background: #eff6ff; color: #2563eb; }
+.stat_orange .statIconBox { background: #fffbeb; color: #ea580c; }
+.stat_purple .statIconBox { background: #faf5ff; color: #8b5cf6; }
+.stat_green .statIconBox { background: #f0fdf4; color: #16a34a; }
+.stat_red .statIconBox { background: #fef2f2; color: #dc2626; }
+
+/* Tabs container (segmented controls) */
+.tabsContainer {
+  display: flex;
+  gap: 4px;
+  background: #e2e8f0;
+  padding: 4px;
+  border-radius: 10px;
+  align-self: flex-start;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.tabBtn {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  color: #0f172a;
+}
+
+.tabActive {
+  background: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Court Sections */
+.courtSection {
+  margin-bottom: 24px;
+}
+
+.courtTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.courtTitle::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background: #2563eb;
+  border-radius: 4px;
+}
+
+.tablePanel {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+  font-size: 14px;
+}
+
+.table th {
+  padding: 14px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f9fafc;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background: #fafafa;
+}
+
+.rowActioning {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Cell elements styling */
+.bookingCode {
+  font-family: monospace;
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.bookingTime {
+  font-size: 12px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.playerName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.playerContact {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.serviceItem {
+  font-size: 12.5px;
+  color: #334155;
+  font-weight: 500;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.amount {
+  font-weight: 800;
+  color: #16a34a;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.paymentMethod {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.checkInTime {
+  font-size: 11px;
+  color: #16a34a;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badgeSuccess { background: #f0fdf4; color: #16a34a; }
+.badgeCheckedIn { background: #eff6ff; color: #2563eb; }
+.badgeCompleted { background: #f0fdf4; color: #15803d; }
+.badgeWarning { background: #fffbeb; color: #ea580c; }
+.badgeError { background: #fef2f2; color: #dc2626; }
+.badgeDefault { background: #f1f5f9; color: #64748b; }
+
+/* Action Cell & buttons */
+.actionCell {
+  display: flex;
+  gap: 6px;
+}
+
+.btnCheckIn, .btnCancel {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.btnCheckIn {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.btnCheckIn:hover:not(:disabled) {
+  background: #dbeafe;
+}
+
+.btnCancel {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.btnCancel:hover:not(:disabled) {
+  background: #fee2e2;
+}
+
+.noAction {
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════
+   MODAL (Custom Dialog)
+══════════════════════════════════════ */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal {
+  background: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  overflow: hidden;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.modalTitle {
+  font-size: 17px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.modalClose {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  background: #F3F4F6;
+  font-size: 18px;
+  color: #6B7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.modalClose:hover { background: #E5E7EB; }
+.modalClose:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.modalBody {
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bookingCard {
+  background: #EFF6FF;
+  border: 1.5px solid #BFDBFE;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.bookingCardCode {
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #3B82F6;
+}
+
+.bookingCardName {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.bookingCardSub {
+  font-size: 13px;
+  color: #6B7280;
+}
+
+.infoBox {
+  padding: 12px 16px;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #166534;
+  text-align: left;
+}
+
+.formGroup { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.formTextarea {
+  border: 1.5px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 10px 13px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.15s;
+}
+
+.formTextarea:focus { border-color: #DC2626; }
+.formTextarea:disabled { background: #F9FAFB; }
+
+.modalError {
+  padding: 10px 14px;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #DC2626;
+  text-align: left;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 22px 18px;
+  border-top: 1px solid #F3F4F6;
+}
+
+.btnCancelModal {
+  padding: 9px 18px;
+  border: 1.5px solid #E5E7EB;
+  background: #F9FAFB;
+  color: #374151;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnCancelModal:hover:not(:disabled) { background: #F3F4F6; }
+.btnCancelModal:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btnPrimaryModal {
+  padding: 9px 22px;
+  background: #2E7D32;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnPrimaryModal:hover:not(:disabled) { background: #1B5E20; }
+.btnPrimaryModal:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btnDangerModal {
+  padding: 9px 22px;
+  background: #DC2626;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btnDangerModal:hover:not(:disabled) { background: #B91C1C; }
+.btnDangerModal:disabled { opacity: 0.5; cursor: not-allowed; }
