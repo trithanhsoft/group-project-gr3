@@ -1,0 +1,874 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for pickleball-booking-system-main/tools/build_pcs_detailed_19_deck.mjs</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">pickleball-booking-system-main/tools</a> build_pcs_detailed_19_deck.mjs</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/263</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/263</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import fs from "node:fs/promises";</span></span></span>
+<span class="cstat-no" title="statement not covered" >import { Presentation, PresentationFile } from "@oai/artifact-tool";</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const OUT = "C:/Users/Lenovo LEGION 5/OneDrive/Desktop/SWT_TESTING/pickleball-booking-system-main/output/PCS_Bao_Cao_Chi_Tiet_19_Slide.pptx";</span>
+<span class="cstat-no" title="statement not covered" >const QA = "C:/Users/Lenovo LEGION 5/OneDrive/Desktop/SWT_TESTING/pickleball-booking-system-main/tmp/presentations/pcs-10-week-summary/tmp/qa-detailed-19";</span>
+<span class="cstat-no" title="statement not covered" >const DASH = "C:/Users/Lenovo LEGION 5/OneDrive/Desktop/SWT_TESTING/pickleball-booking-system-main/tmp/presentations/pcs-10-week-summary/tmp/assets/dashboard-overview.png";</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >const W=1280,H=720;</span>
+<span class="cstat-no" title="statement not covered" >const C={bg:"#07101F",panel:"#0D1729",panel2:"#111E33",line:"#22314A",white:"#F8FAFC",muted:"#9AA9C0",green:"#00D89C",cyan:"#08BEE8",blue:"#4D8DFF",purple:"#D938F0",red:"#FF5A67",amber:"#F6C453"};</span>
+<span class="cstat-no" title="statement not covered" >const pres=Presentation.create({slideSize:{width:W,height:H}});</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >function box(slide,x,y,w,h,fill=C.panel,line=C.line,r="roundRect"){</span>
+<span class="cstat-no" title="statement not covered" >  const cfg={geometry:r,position:{left:x,top:y,width:w,height:h},fill,line:{style:"solid",fill:line,width:1}};</span>
+<span class="cstat-no" title="statement not covered" >  if(["rect","textbox","roundRect"].includes(r)) cfg.borderRadius="rounded-xl";</span>
+<span class="cstat-no" title="statement not covered" >  return slide.shapes.add(cfg);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function text(slide,txt,x,y,w,h,size=22,color=C.white,bold=false,align="left"){</span>
+<span class="cstat-no" title="statement not covered" >  const s=slide.shapes.add({geometry:"textbox",position:{left:x,top:y,width:w,height:h},fill:"none",line:{style:"solid",fill:"none",width:0}});</span>
+<span class="cstat-no" title="statement not covered" >  s.text=txt; s.text.style={fontFamily:"Aptos",fontSize:size,color,bold,alignment:align,verticalAlignment:"middle",wrap:true}; return s;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function line(slide,x,y,w,color=C.green,h=3){slide.shapes.add({geometry:"rect",position:{left:x,top:y,width:w,height:h},fill:color,line:{style:"solid",fill:color,width:0}});}</span>
+<span class="cstat-no" title="statement not covered" >function chrome(slide,n,section){</span>
+<span class="cstat-no" title="statement not covered" >  slide.background.fill=C.bg;</span>
+<span class="cstat-no" title="statement not covered" >  text(slide,"PCS • QUALITY ENGINEERING",56,24,380,24,13,C.muted,true);</span>
+<span class="cstat-no" title="statement not covered" >  text(slide,section.toUpperCase(),860,32,300,24,13,C.muted,true,"right");</span>
+<span class="cstat-no" title="statement not covered" >  text(slide,String(n).padStart(2,"0"),1190,665,36,22,12,C.muted,true,"right");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >function title(slide,txt,sub){text(slide,txt,56,70,1168,54,35,C.white,true); line(slide,56,136,94,C.green,4); if(sub)text(slide,sub,166,124,1000,30,16,C.muted,false);}</span>
+<span class="cstat-no" title="statement not covered" >function pill(slide,label,x,y,w,fill=C.green,color=C.bg){box(slide,x,y,w,30,fill,fill);text(slide,label,x+8,y,w-16,30,13,color,true,"center");}</span>
+<span class="cstat-no" title="statement not covered" >function bulletList(slide,items,x,y,w,gap=54,size=21,color=C.white){items.forEach((it,i)=&gt;{box(slide,x,y+i*gap,11,11,C.green,C.green,"ellipse");text(slide,it,x+26,y-8+i*gap,w-26,gap,size,color,false);});}</span>
+<span class="cstat-no" title="statement not covered" >function metric(slide,value,label,x,y,w,accent=C.green){text(slide,value,x,y,w,58,38,accent,true,"center");text(slide,label,x,y+56,w,28,14,C.muted,true,"center");}</span>
+<span class="cstat-no" title="statement not covered" >function sectionTag(slide,label,x,y){line(slide,x,y,5,C.green,28);text(slide,label,x+16,y-2,420,30,16,C.muted,true);}</span>
+<span class="cstat-no" title="statement not covered" >function flow(slide,items,x,y,totalW){const gap=18, w=(totalW-gap*(items.length-1))/items.length; items.forEach((it,i)=&gt;{if(i&lt;items.length-1)line(slide,x+i*(w+gap)+w,y+37,gap,C.line,2);box(slide,x+i*(w+gap),y,w,76,C.panel2,C.line);text(slide,String(i+1).padStart(2,"0"),x+i*(w+gap)+12,y+9,34,20,12,C.green,true);text(slide,it,x+i*(w+gap)+12,y+28,w-24,38,15,C.white,true,"center");});}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 1</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add(); chrome(s,1,"Báo cáo tổng kết 10 tuần");</span>
+<span class="cstat-no" title="statement not covered" > text(s,"DỰ ÁN KIỂM THỬ HỆ THỐNG",70,92,720,38,18,C.green,true);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"Pickleball Court &amp; Coach\nBooking System",70,142,820,150,52,C.white,true);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"Báo cáo hoạt động kiểm thử &amp; tự động hóa\n10 tuần đồng hành cùng AI",74,306,670,72,24,C.muted,false);</span>
+<span class="cstat-no" title="statement not covered" > line(s,74,404,260,C.cyan,5);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"NHÓM 3 • SWP391_SE1701",74,430,520,32,18,C.white,true);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"Đại học FPT TP.HCM",74,465,480,28,16,C.muted);</span>
+<span class="cstat-no" title="statement not covered" > box(s,800,124,384,408,C.panel,C.line);</span>
+<span class="cstat-no" title="statement not covered" > sectionTag(s,"CORE TEAM",830,154);</span>
+<span class="cstat-no" title="statement not covered" > const members=[["Trần Quốc Sang","PM / Tester 2"],["Lê Thị Văn Anh","QA Leader"],["Trương Quang Tuân","Tester 1"],["Nguyễn Đào Văn Quý","Backend Developer"],["Lê Hữu Sơn","Frontend Developer"]];</span>
+<span class="cstat-no" title="statement not covered" > members.forEach((m,i)=&gt;{text(s,m[0],830,205+i*59,220,26,18,C.white,true);text(s,m[1],830,232+i*59,250,20,14,i===1?C.green:C.muted);});</span>
+<span class="cstat-no" title="statement not covered" > pill(s,"QUALITY • AUTOMATION • TRACEABILITY",800,558,384,C.cyan,C.bg);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 2</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,2,"Chức năng được kiểm thử");title(s,"5 nghiệp vụ cốt lõi tạo nên trải nghiệm PCS","Mỗi module được gắn với rủi ro nghiệp vụ và lớp kiểm thử phù hợp");</span>
+<span class="cstat-no" title="statement not covered" > const features=[["AUTHENTICATION","Đăng ký • đăng nhập • OAuth2 • phân quyền",C.green],["BOOKING &amp; SCHEDULING","Chọn sân • giữ slot 10 phút • overlap check",C.cyan],["PAYMENT","QR PayOS • webhook IPN • trạng thái đơn",C.blue],["PROMOTION","Voucher • min order • ngày hết hạn",C.purple],["REVIEW &amp; RATING","Đánh giá sân và HLV sau buổi chơi",C.amber]];</span>
+<span class="cstat-no" title="statement not covered" > features.forEach((f,i)=&gt;{const y=174+i*88;line(s,56,y,6,f[2],66);text(s,String(i+1).padStart(2,"0"),80,y,38,24,13,f[2],true);text(s,f[0],130,y-2,290,30,19,C.white,true);text(s,f[1],440,y-1,730,40,18,C.muted);});</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,626,1168,32,C.panel2,C.line);text(s,"Phạm vi chức năng → kịch bản kiểm thử → bằng chứng chất lượng",76,627,1128,28,16,C.green,true,"center");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 3</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,3,"Test Plan &amp; Criteria");title(s,"ISTQB v4.0 định nghĩa rõ khi nào được bắt đầu và kết thúc","Các tiêu chí biến kế hoạch kiểm thử thành một quality gate có thể đo lường");</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,180,544,382,C.panel,C.line);sectionTag(s,"ENTRY CRITERIA",82,206);</span>
+<span class="cstat-no" title="statement not covered" > bulletList(s,["API Route Handlers có cấu trúc logic cơ bản","Vitest và JSDOM đã cấu hình","Mock data tập trung đã sẵn sàng"],88,282,470,78,20);</span>
+<span class="cstat-no" title="statement not covered" > box(s,640,180,584,382,C.panel2,C.line);sectionTag(s,"EXIT CRITERIA",666,206);</span>
+<span class="cstat-no" title="statement not covered" > const exits=[["100%","Test cases được thực thi và pass",C.green],["&gt;90%","Code coverage mục tiêu",C.cyan],["0","Critical / High defect mở",C.red]];</span>
+<span class="cstat-no" title="statement not covered" > exits.forEach((e,i)=&gt;{metric(s,e[0],e[1],678,272+i*84,500,e[2]);});</span>
+<span class="cstat-no" title="statement not covered" > pill(s,"TEST_PLAN.md",486,604,308,C.blue,C.white);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 4</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,4,"Scope &amp; Deliverables");title(s,"Phạm vi gọn, sản phẩm bàn giao đầy đủ và có thể truy vết","Nhóm ưu tiên chiều sâu automation thay vì mở rộng sang hạ tầng");</span>
+<span class="cstat-no" title="statement not covered" > text(s,"IN SCOPE",56,174,260,28,18,C.green,true);line(s,56,210,520,C.green,3);</span>
+<span class="cstat-no" title="statement not covered" > bulletList(s,["Unit Test cho service logic","API Integration Test cho endpoints","UI Component Test cho LoginPage"],66,250,500,70,20);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"OUT OF SCOPE",646,174,300,28,18,C.red,true);line(s,646,210,578,C.red,3);</span>
+<span class="cstat-no" title="statement not covered" > bulletList(s,["Load / Stress testing","Network penetration testing","Tài khoản ngân hàng thật"],656,250,540,70,20);</span>
+<span class="cstat-no" title="statement not covered" > sectionTag(s,"DELIVERABLES",56,496);</span>
+<span class="cstat-no" title="statement not covered" > const docs=[["TEST_PLAN.md","Kế hoạch"],["53 automated tests","Mã kiểm thử"],["Postman Collection","API assets"],["Defect + Summary","Báo cáo"]];</span>
+<span class="cstat-no" title="statement not covered" > docs.forEach((d,i)=&gt;{const x=56+i*294;box(s,x,542,268,80,C.panel,C.line);text(s,d[0],x+16,554,236,28,17,[C.green,C.cyan,C.purple,C.blue][i],true,"center");text(s,d[1],x+16,584,236,22,14,C.muted,false,"center");});</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 5</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,5,"Test Data Management");title(s,"Một nguồn dữ liệu tập trung giúp test độc lập và dễ bảo trì","tests/data/testData.ts kiểm soát positive, negative và cleanup state");</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,176,350,390,C.panel,C.line);text(s,"testData.ts",86,202,290,38,26,C.green,true);text(s,"SINGLE SOURCE OF TRUTH",86,250,290,22,13,C.muted,true);line(s,86,294,140,C.green,4);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"Accounts\nCourts\nTime slots\nVoucher codes\nWebhook payloads",86,326,250,174,20,C.white,true);</span>
+<span class="cstat-no" title="statement not covered" > box(s,446,176,360,390,C.panel2,C.line);sectionTag(s,"POSITIVE",470,202);bulletList(s,["Đăng ký đúng định dạng","PayOS signature hợp lệ","Booking ở slot trống"],478,280,292,70,18);</span>
+<span class="cstat-no" title="statement not covered" > box(s,846,176,378,390,"#211720",C.line);sectionTag(s,"NEGATIVE",870,202);bulletList(s,["Email sai / password yếu","Webhook sai signature","Overlap / vượt 3 đơn"],878,280,310,70,18);</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,598,1168,48,"#0B2830",C.green);text(s,"vi.clearAllMocks() sau mỗi test → không ảnh hưởng chéo",80,605,1120,32,18,C.green,true,"center");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 6</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,6,"Thiết kế hộp đen");title(s,"8 quy tắc bao phủ toàn bộ tổ hợp đăng ký tài khoản","Decision Table biến ba điều kiện đầu vào thành hành vi có thể kiểm chứng");</span>
+<span class="cstat-no" title="statement not covered" > const cols=["Điều kiện","R1","R2","R3","R4","R5","R6","R7","R8"], rows=[["Email hợp lệ &amp; duy nhất","Y","Y","Y","Y","N","N","N","N"],["SĐT hợp lệ &amp; duy nhất","Y","Y","N","N","Y","Y","N","N"],["Mật khẩu mạnh","Y","N","Y","N","Y","N","Y","N"],["Kết quả","OK","Pass","Phone","Both","Email","Both","Both","All"]];</span>
+<span class="cstat-no" title="statement not covered" > const x=56,y=188,cw=[310,94,94,94,94,94,94,94,94],rh=68;let xx=x;</span>
+<span class="cstat-no" title="statement not covered" > cols.forEach((v,i)=&gt;{box(s,xx,y,cw[i],50,C.panel2,C.line,"rect");text(s,v,xx+6,y+6,cw[i]-12,38,15,i?C.muted:C.white,true,"center");xx+=cw[i];});</span>
+<span class="cstat-no" title="statement not covered" > rows.forEach((r,ri)=&gt;{xx=x;r.forEach((v,i)=&gt;{box(s,xx,y+50+ri*rh,cw[i],rh,ri===3?"#0D2630":C.panel,C.line,"rect");text(s,v,xx+8,y+58+ri*rh,cw[i]-16,rh-16,i?17:16,ri===3?C.green:C.white,ri===3||i===0,"center");xx+=cw[i];});});</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,538,1168,86,C.panel2,C.line);metric(s,"8","TEST CASES",82,548,180,C.green);text(s,"TC_DT_01 → TC_DT_08",288,560,350,34,24,C.white,true);text(s,"Phát hiện lỗi nhập liệu đồng thời thay vì chỉ kiểm tra từng trường riêng lẻ",662,548,518,54,18,C.muted);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 7</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,7,"Thiết kế Use Case");title(s,"UC-04 khóa chặt hành trình Đặt sân → Thanh toán → Xác nhận","Luồng cơ bản và ba ngoại lệ xác định rõ trạng thái của slot");</span>
+<span class="cstat-no" title="statement not covered" > flow(s,["Chọn sân\n&amp; khung giờ","Giữ slot\n10 phút","Quét QR\nPayOS","Webhook\nIPN","Đơn Paid\nKhóa slot"],56,184,1168);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"3 luồng ngoại lệ quyết định độ bền của hệ thống",56,310,700,34,24,C.white,true);</span>
+<span class="cstat-no" title="statement not covered" > const af=[["AF1","Trùng giờ chơi","Từ chối khi slot đã bị khóa",C.red],["AF2","Vượt giới hạn","Chặn đơn thứ 4 trong ngày",C.amber],["AF3","Hủy / hết hạn","Giải phóng slot sau 10 phút",C.cyan]];</span>
+<span class="cstat-no" title="statement not covered" > af.forEach((a,i)=&gt;{const y=366+i*82;line(s,56,y,5,a[3],58);text(s,a[0],80,y,62,30,18,a[3],true);text(s,a[1],150,y,230,30,20,C.white,true);text(s,a[2],402,y,520,42,18,C.muted);});</span>
+<span class="cstat-no" title="statement not covered" > box(s,960,344,240,220,C.panel2,C.line);metric(s,"4","USE CASE TCs",980,370,200,C.green);text(s,"TC_UC_01\n→\nTC_UC_04",1000,466,160,82,22,C.white,true,"center");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 8</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,8,"White-box &amp; BVA");title(s,"Các biên nghiệp vụ được chuyển thành điểm kiểm thử cụ thể","Không chỉ phủ dòng lệnh — nhóm kiểm tra đúng nơi hành vi thay đổi");</span>
+<span class="cstat-no" title="statement not covered" > const blocks=[</span>
+<span class="cstat-no" title="statement not covered" >  ["calculateRefundAmount()","HOÀN TIỀN","&lt; 2h: 0%","2–12h: 70%","&gt; 12h: 100%",C.cyan],</span>
+<span class="cstat-no" title="statement not covered" >  ["createBooking()","GIỚI HẠN ĐẶT","Lượt 3: Pass","Lượt 4: Block","Ranh giới/ngày",C.green],</span>
+<span class="cstat-no" title="statement not covered" >  ["validatePromotion()","VOUCHER","Hết hạn T/F","Min order T/F","Phủ nhánh if/else",C.purple]</span>
+<span class="cstat-no" title="statement not covered" > ];</span>
+<span class="cstat-no" title="statement not covered" > blocks.forEach((b,i)=&gt;{const x=56+i*390;box(s,x,188,360,350,C.panel,C.line);text(s,b[1],x+24,214,312,24,14,b[5],true);text(s,b[0],x+24,250,312,58,23,C.white,true);line(s,x+24,322,80,b[5],4);[b[2],b[3],b[4]].forEach((z,j)=&gt;{text(s,String(j+1).padStart(2,"0"),x+24,352+j*55,48,25,13,b[5],true);text(s,z,x+72,346+j*55,252,38,18,C.muted);});});</span>
+<span class="cstat-no" title="statement not covered" > text(s,"KỸ THUẬT",56,580,120,24,13,C.muted,true);pill(s,"EP",184,574,72,C.blue,C.white);pill(s,"BVA",268,574,82,C.cyan,C.bg);pill(s,"STATEMENT",362,574,126,C.green,C.bg);pill(s,"BRANCH",500,574,108,C.purple,C.white);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 9</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,9,"API Testing with Postman");title(s,"Postman kiểm chứng contract HTTP trước khi đi sâu vào automation","Collection tự lưu JWT và assert đồng thời status code lẫn response schema");</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,176,436,392,C.panel,C.line);sectionTag(s,"ENVIRONMENT",82,204);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"baseUrl",86,270,120,26,16,C.cyan,true);text(s,"http://localhost:3000",218,270,232,26,17,C.white,true);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"jwt_token",86,322,120,26,16,C.green,true);text(s,"Auto-save after login",218,322,232,26,17,C.muted);</span>
+<span class="cstat-no" title="statement not covered" > line(s,86,380,350,C.line,2);text(s,"COLLECTION FLOW",86,404,230,24,13,C.muted,true);</span>
+<span class="cstat-no" title="statement not covered" > flow(s,["Register","Login","Save JWT"],86,448,350);</span>
+<span class="cstat-no" title="statement not covered" > box(s,532,176,692,392,C.panel2,C.line);sectionTag(s,"POSTMAN TEST SCRIPT",558,204);</span>
+<span class="cstat-no" title="statement not covered" > text(s,'pm.test("Status code is 200/201", () =&gt; {\n  pm.expect(pm.response.code)\n    .to.be.oneOf([200, 201]);\n});\n\npm.test("Response contains token", () =&gt; {\n  pm.expect(pm.response.json())\n    .to.have.property("token");\n});',568,266,626,238,18,C.white,false);</span>
+<span class="cstat-no" title="statement not covered" > pill(s,"PCS.postman_collection.json",656,594,474,C.cyan,C.bg);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 10</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,10,"Automation stack");title(s,"Vitest tạo một workspace kiểm thử nhanh, thống nhất và dễ bảo trì","Backend chạy Node, UI chạy JSDOM, dữ liệu dùng chung qua testData.ts");</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,184,430,366,C.panel,C.line);text(s,"VITEST",86,214,230,42,28,C.green,true);text(s,"Lý do lựa chọn",86,270,260,28,18,C.white,true);</span>
+<span class="cstat-no" title="statement not covered" > bulletList(s,["TypeScript &amp; Next.js không cần Babel phức tạp","Chạy song song nhiều suite","Mock API, repository và dependency linh hoạt","Coverage V8 tích hợp trực tiếp"],90,324,350,58,18);</span>
+<span class="cstat-no" title="statement not covered" > box(s,532,184,692,366,C.panel2,C.line);sectionTag(s,"WORKSPACE ARCHITECTURE",562,214);</span>
+<span class="cstat-no" title="statement not covered" > flow(s,["vitest.config.ts","Backend\nNode","Frontend\nJSDOM","Coverage\nV8"],562,278,632);</span>
+<span class="cstat-no" title="statement not covered" > line(s,594,404,568,C.line,2);pill(s,"tests/data/testData.ts",690,430,368,C.cyan,C.bg);text(s,"Mock accounts • courts • slots • vouchers",658,478,432,30,17,C.muted,false,"center");</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,580,1168,50,"#0B2830",C.green);text(s,"Một nguồn dữ liệu kiểm thử → ít trùng lặp → thay đổi schema nhanh hơn",80,588,1120,34,18,C.green,true,"center");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 11</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,11,"Code Coverage with Istanbul");title(s,"Coverage chứng minh bộ test đã đi qua các nhánh logic trọng yếu","Istanbul v8 xuất đồng thời số liệu tổng quan và báo cáo HTML theo từng dòng code");</span>
+<span class="cstat-no" title="statement not covered" > const ms=[["53","TOTAL TESTS",C.white],["53","PASSED",C.green],["0","FAILED",C.red],["100%","PASS RATE",C.green],["4.22s","LOCAL RUN",C.cyan]];</span>
+<span class="cstat-no" title="statement not covered" > ms.forEach((m,i)=&gt;{const x=56+i*232;box(s,x,176,208,116,C.panel,C.line);metric(s,m[0],m[1],x+12,190,184,m[2]);});</span>
+<span class="cstat-no" title="statement not covered" > sectionTag(s,"TEST SUITE ALLOCATION",56,338);</span>
+<span class="cstat-no" title="statement not covered" > const bars=[["Unit Tests",41,53,C.green],["API Integration",9,53,C.cyan],["UI Component",3,53,C.purple]];</span>
+<span class="cstat-no" title="statement not covered" > bars.forEach((b,i)=&gt;{const y=390+i*67;text(s,b[0],56,y,210,26,17,C.white,true);text(s,`${b[1]} TCs`,1050,y,150,26,16,C.white,true,"right");line(s,278,y+8,746,C.line,12);line(s,278,y+8,746*b[1]/b[2],b[3],12);});</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,600,1168,46,C.panel2,C.line);text(s,"Statements 92.5%",90,607,250,28,17,C.green,true);text(s,"Branches 88.3%",370,607,250,28,17,C.cyan,true);text(s,"Functions 95.0%",650,607,250,28,17,C.purple,true);text(s,"Lines 92.5%",930,607,240,28,17,C.blue,true);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 12</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,12,"QA Dashboard");title(s,"Dashboard biến kết quả kiểm thử thành bằng chứng có thể đọc ngay","Một màn hình kết nối pass rate, phân bổ suite và trạng thái pipeline");</span>
+<span class="cstat-no" title="statement not covered" > const bytes=await fs.readFile(DASH);s.images.add({blob:bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),contentType:"image/png",alt:"PCS QA Dashboard overview showing 53 passed tests and pipeline status",fit:"contain",position:{left:56,top:170,width:820,height:462},geometry:"roundRect",borderRadius:"rounded-xl"});</span>
+<span class="cstat-no" title="statement not covered" > line(s,910,184,5,C.green,38);text(s,"OVERVIEW PORTAL",930,184,270,30,17,C.muted,true);</span>
+<span class="cstat-no" title="statement not covered" > bulletList(s,["53 Passed / 0 Failed","100% automation","Phân bổ Unit • API • UI","Pipeline 7 bước trực quan","Coverage theo 4 chỉ số"],918,252,290,61,19);</span>
+<span class="cstat-no" title="statement not covered" > box(s,910,560,294,70,"#0B2830",C.green);text(s,"Evidence → quyết định",930,575,254,38,18,C.green,true,"center");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 13</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,13,"Dashboard vận hành");title(s,"Test Execution và Defect Center rút ngắn vòng phản hồi QA–Dev","Mỗi kết quả đều có thể lọc, truy vết và mở chi tiết xử lý");</span>
+<span class="cstat-no" title="statement not covered" > sectionTag(s,"TEST EXECUTION GRID",56,174);text(s,"Search • Filter • Pagination • Priority • Status",76,214,530,34,18,C.muted);</span>
+<span class="cstat-no" title="statement not covered" > const rows=[["TC_PAY_01","Payment","High","PASS"],["TC_BOOK_04","Booking","High","PASS"],["TC_REG_03","Auth","Medium","PASS"],["TC_UI_02","Login UI","Low","PASS"]];</span>
+<span class="cstat-no" title="statement not covered" > const y=264;["ID","MODULE","PRIORITY","STATUS"].forEach((h,i)=&gt;text(s,h,66+i*145,y,140,28,14,C.muted,true));</span>
+<span class="cstat-no" title="statement not covered" > rows.forEach((r,ri)=&gt;{box(s,56,y+38+ri*50,574,42,ri%2?C.panel2:C.panel,C.line,"rect");r.forEach((v,i)=&gt;text(s,v,66+i*145,y+42+ri*50,140,34,15,i===3?C.green:C.white,i===3));});</span>
+<span class="cstat-no" title="statement not covered" > sectionTag(s,"DEFECT DETAIL",680,174);box(s,680,216,544,302,C.panel,C.line);</span>
+<span class="cstat-no" title="statement not covered" > pill(s,"HIGH",704,238,78,C.red,C.white);text(s,"DF_PAY_01",800,238,170,30,20,C.white,true);text(s,"Timezone drift in refund calculation",704,284,470,34,21,C.white,true);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"STEPS TO REPRODUCE",704,338,240,24,13,C.muted,true);text(s,"1. Create booking near boundary\n2. Cancel using local timezone\n3. Compare expected refund",704,366,470,86,17,C.white);</span>
+<span class="cstat-no" title="statement not covered" > line(s,704,466,470,C.line,2);text(s,"SUGGESTED FIX",704,480,180,22,13,C.green,true);text(s,"Normalize timezone or inject controlled clock",874,476,300,34,16,C.muted);</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,566,1168,62,"#0D2630",C.green);text(s,"Chi tiết đủ ngữ cảnh giúp Dev tái hiện và sửa lỗi ngay trong một vòng",80,578,1120,36,18,C.green,true,"center");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 14</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,14,"Truy vết &amp; xu hướng");title(s,"Traceability nối yêu cầu với test — trend chứng minh chất lượng cải thiện","Dashboard trả lời đồng thời: đã kiểm gì, ở đâu và thay đổi ra sao");</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,174,552,342,C.panel,C.line);sectionTag(s,"REQUIREMENT TRACEABILITY",80,198);</span>
+<span class="cstat-no" title="statement not covered" > const map=[["UC-01","TC_USR_01","tests/unit/user.test.ts"],["UC-04","TC_PAY_01","tests/api/payment.api.test.ts"],["FR-12","TC_BOOK_04","tests/unit/booking.test.ts"]];</span>
+<span class="cstat-no" title="statement not covered" > map.forEach((r,i)=&gt;{const y=258+i*70;pill(s,r[0],80,y,78,C.blue,C.white);text(s,r[1],178,y,132,30,17,C.white,true);text(s,r[2],330,y,250,30,15,C.muted);});</span>
+<span class="cstat-no" title="statement not covered" > box(s,648,174,576,342,C.panel2,C.line);sectionTag(s,"TREND ANALYTICS",672,198);</span>
+<span class="cstat-no" title="statement not covered" > // chart axes and trend</span>
+<span class="cstat-no" title="statement not covered" > line(s,694,456,470,C.line,2);line(s,694,278,2,C.line,178);</span>
+<span class="cstat-no" title="statement not covered" > const pts=[[712,424],[802,390],[892,360],[982,320],[1072,294],[1152,278]];</span>
+<span class="cstat-no" title="statement not covered" > for(let i=0;i&lt;pts.length-1;i++){const [x1,y1]=pts[i],[x2,y2]=pts[i+1];const dx=x2-x1,dy=y2-y1,len=Math.sqrt(dx*dx+dy*dy);const ln=s.shapes.add({geometry:"rect",position:{left:x1,top:y1,width:len,height:4},fill:C.green,line:{style:"solid",fill:C.green,width:0}});ln.rotation=Math.atan2(dy,dx)*180/Math.PI;}</span>
+<span class="cstat-no" title="statement not covered" > pts.forEach((p,i)=&gt;{box(s,p[0]-6,p[1]-6,12,12,C.green,C.green,"ellipse");text(s,`R${i+1}`,p[0]-15,466,30,20,12,C.muted,true,"center");});</span>
+<span class="cstat-no" title="statement not covered" > text(s,"PASS RATE / COVERAGE",872,232,220,24,13,C.green,true,"center");</span>
+<span class="cstat-no" title="statement not covered" > const feats=[["History Log","Đối soát Run A / B"],["Report Center","Tải báo cáo Markdown"],["Settings","Vitest • Timezone • Mock DB"]];feats.forEach((f,i)=&gt;{const x=56+i*390;line(s,x,560,5,[C.green,C.cyan,C.purple][i],52);text(s,f[0],x+18,552,340,28,18,C.white,true);text(s,f[1],x+18,584,340,28,16,C.muted);});</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 15</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,15,"Defect management");title(s,"Ba lỗi được đóng bằng một quy trình retest có kiểm soát","Mỗi defect đi qua cùng một lifecycle và giữ bằng chứng sửa lỗi");</span>
+<span class="cstat-no" title="statement not covered" > flow(s,["New","Assigned","In Progress","Fixed","Retest","Closed"],56,174,1168);</span>
+<span class="cstat-no" title="statement not covered" > const defs=[["DF_PAY_01","HIGH","Lệch múi giờ hoàn tiền\nUTC vs UTC+7",C.red],["DF_REG_01","MEDIUM","Email hai dấu chấm\nđược Zod chấp nhận",C.amber],["DF_PAY_02","MEDIUM","Webhook thiếu\nsuccess indicator",C.cyan]];</span>
+<span class="cstat-no" title="statement not covered" > defs.forEach((d,i)=&gt;{const x=56+i*390;box(s,x,312,360,216,C.panel,C.line);pill(s,d[1],x+24,336,96,d[3],d[1]==="HIGH"?C.white:C.bg);text(s,d[0],x+140,336,170,30,19,C.white,true);text(s,d[2],x+24,392,312,78,20,C.white,true);text(s,"FIXED • RETESTED • CLOSED",x+24,488,312,24,14,C.green,true,"center");});</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,572,1168,60,"#0B2830",C.green);metric(s,"100%","DEFECTS CLOSED",74,568,240,C.green);text(s,"Không còn defect Critical/High mở trước khi bàn giao",342,582,830,34,19,C.white,true,"center");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 16</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,16,"Test Summary Report");title(s,"Kết quả cuối cùng đạt toàn bộ quality gate đã cam kết","53 test pass, không còn blocker và các luồng trọng yếu sẵn sàng bàn giao");</span>
+<span class="cstat-no" title="statement not covered" > const ms=[["53","TOTAL",C.white],["53","PASSED",C.green],["0","FAILED",C.red],["0","BLOCKED",C.amber],["100%","PASS RATE",C.cyan]];</span>
+<span class="cstat-no" title="statement not covered" > ms.forEach((m,i)=&gt;{const x=56+i*232;box(s,x,182,208,118,C.panel,C.line);metric(s,m[0],m[1],x+10,198,188,m[2]);});</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,346,1168,204,C.panel2,C.line);sectionTag(s,"RELEASE ASSESSMENT",82,372);</span>
+<span class="cstat-no" title="statement not covered" > bulletList(s,["Đăng nhập và phân quyền hoạt động đúng","Đặt sân thời gian thực không phát sinh double-booking","PayOS webhook và trạng thái đơn nhất quán","Hủy lịch và hoàn tiền đúng các mốc nghiệp vụ"],92,430,1080,50,19);</span>
+<span class="cstat-no" title="statement not covered" > pill(s,"RELEASE READY",462,622,356,C.green,C.bg);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 17</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,17,"AI Audit");title(s,"AI tăng tốc khởi tạo — nhóm vẫn chịu trách nhiệm kiểm chứng","Prompt engineering hiệu quả khi mọi gợi ý đều được review bằng tài liệu và test");</span>
+<span class="cstat-no" title="statement not covered" > const ai=[["ChatGPT","Boilerplate test &amp; NextRequest mocks",C.green],["Claude","Use Case branches &amp; workspace config",C.cyan],["GitHub Copilot","Gợi ý mã trong IDE",C.purple]];</span>
+<span class="cstat-no" title="statement not covered" > ai.forEach((a,i)=&gt;{const x=56+i*390;box(s,x,178,360,112,C.panel,C.line);text(s,a[0],x+22,194,316,32,22,a[2],true);text(s,a[1],x+22,232,316,42,16,C.muted);});</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,330,544,250,C.panel2,C.line);sectionTag(s,"GIÁ TRỊ",80,354);metric(s,"~50%","BOILERPLATE ĐƯỢC HỖ TRỢ",102,406,450,C.green);text(s,"Tiết kiệm thời gian khởi tạo để tập trung vào logic nghiệp vụ",92,508,472,46,17,C.muted,false,"center");</span>
+<span class="cstat-no" title="statement not covered" > box(s,640,330,584,250,"#211720",C.line);sectionTag(s,"AI MISTAKES → HUMAN FIX",664,354);</span>
+<span class="cstat-no" title="statement not covered" > bulletList(s,["UTC cứng làm refund test fail ngẫu nhiên → dùng ngày động / clock kiểm soát","Cú pháp RTL cũ → đối chiếu tài liệu v16 và cập nhật test"],676,414,510,76,18);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"Nguyên tắc: AI đề xuất • Con người xác minh • Test quyết định",56,614,1168,30,19,C.white,true,"center");</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 18</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,18,"Đóng góp thành viên");title(s,"Phân công rõ vai trò, nhưng chất lượng là trách nhiệm chung","Mỗi đóng góp gắn với deliverable và pull request có thể truy vết");</span>
+<span class="cstat-no" title="statement not covered" > const people=[</span>
+<span class="cstat-no" title="statement not covered" >  ["Trần Quốc Sang","PM / Tester 2","Kế hoạch • Decision Table • Use Case","PR #1 • #3",C.blue],</span>
+<span class="cstat-no" title="statement not covered" >  ["Lê Thị Văn Anh","QA Leader","Vitest/JSDOM • API tests • Dashboard","PR #6 • #7",C.green],</span>
+<span class="cstat-no" title="statement not covered" >  ["Trương Quang Tuân","Tester 1","Unit Tests • Workspace config","PR #2 • #4",C.cyan],</span>
+<span class="cstat-no" title="statement not covered" >  ["Nguyễn Đào Văn Quý","Backend Dev","API • Mock DB • Business fixes","PR #5 • #8",C.amber],</span>
+<span class="cstat-no" title="statement not covered" >  ["Lê Hữu Sơn","Frontend Dev","LoginPage • RTL component logic","PR #9 • #10",C.purple]</span>
+<span class="cstat-no" title="statement not covered" > ];</span>
+<span class="cstat-no" title="statement not covered" > people.forEach((p,i)=&gt;{const y=168+i*92;line(s,56,y,7,p[4],70);text(s,p[0],82,y,270,30,21,C.white,true);text(s,p[1],82,y+34,270,24,15,p[4],true);text(s,p[2],386,y+4,570,48,18,C.muted);pill(s,p[3],1020,y+16,172,p[4],p[4]===C.amber?C.bg:C.white);});</span>
+<span class="cstat-no" title="statement not covered" > box(s,56,628,1168,28,C.panel2,C.line);line(s,56,628,1168,C.green,3);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >// 19</span>
+<span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" > const s=pres.slides.add();chrome(s,19,"Kết luận &amp; bước tiếp theo");</span>
+<span class="cstat-no" title="statement not covered" > text(s,"Nền tảng QA đã sẵn sàng.\nBước tiếp theo là mở rộng chiều sâu kiểm thử.",72,92,1040,118,40,C.white,true);</span>
+<span class="cstat-no" title="statement not covered" > line(s,72,232,160,C.green,5);</span>
+<span class="cstat-no" title="statement not covered" > const wins=[["53 / 53","AUTOMATED TESTS",C.green],["&gt;92.5%","TARGETED COVERAGE",C.cyan],["100%","DEFECTS CLOSED",C.purple]];</span>
+<span class="cstat-no" title="statement not covered" > wins.forEach((w,i)=&gt;{const x=72+i*358;box(s,x,282,326,126,C.panel,C.line);metric(s,w[0],w[1],x+18,298,290,w[2]);});</span>
+<span class="cstat-no" title="statement not covered" > text(s,"HƯỚNG PHÁT TRIỂN",72,462,330,28,18,C.muted,true);line(s,72,498,1136,C.line,2);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"01",72,524,52,32,18,C.green,true);text(s,"K6 / JMeter",132,520,280,36,23,C.white,true);text(s,"Bổ sung performance gate vào pipeline CI/CD",418,520,760,40,18,C.muted);</span>
+<span class="cstat-no" title="statement not covered" > text(s,"02",72,584,52,32,18,C.cyan,true);text(s,"Playwright E2E",132,580,280,36,23,C.white,true);text(s,"Mở rộng sang Chrome, Safari và các hành trình thật",418,580,760,40,18,C.muted);</span>
+<span class="cstat-no" title="statement not covered" > pill(s,"READY FOR THE NEXT QUALITY GATE",830,624,330,C.green,C.bg);</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >await fs.mkdir(new URL("file:///C:/Users/Lenovo%20LEGION%205/OneDrive/Desktop/SWT_TESTING/pickleball-booking-system-main/output/"),{recursive:true});</span>
+<span class="cstat-no" title="statement not covered" >await fs.mkdir(QA,{recursive:true});</span>
+<span class="cstat-no" title="statement not covered" >for (const [i,s] of pres.slides.items.entries()){</span>
+<span class="cstat-no" title="statement not covered" >  const png=await pres.export({slide:s,format:"png",scale:1});await fs.writeFile(`${QA}/slide-${String(i+1).padStart(2,"0")}.png`,new Uint8Array(await png.arrayBuffer()));</span>
+<span class="cstat-no" title="statement not covered" >  const layout=await s.export({format:"layout"});await fs.writeFile(`${QA}/slide-${String(i+1).padStart(2,"0")}.layout.json`,await layout.text());</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >const montage=await pres.export({format:"png",montage:true,scale:0.5});await fs.writeFile(`${QA}/montage.png`,new Uint8Array(await montage.arrayBuffer()));</span>
+<span class="cstat-no" title="statement not covered" >const pptx=await PresentationFile.exportPptx(pres);await pptx.save(OUT);</span>
+<span class="cstat-no" title="statement not covered" >console.log(OUT);</span>
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-07-22T07:25:34.639Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    

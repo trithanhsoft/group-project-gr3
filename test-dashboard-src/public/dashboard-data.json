@@ -1,7 +1,7 @@
 {
   "overview": {
-    "total": 53,
-    "passed": 53,
+    "total": 55,
+    "passed": 55,
     "failed": 0,
     "blocked": 0,
     "skipped": 0,
@@ -864,6 +864,28 @@
       "file": "payment.api.test.ts"
     },
     {
+      "tcId": "TC_API_10",
+      "module": "Payment API",
+      "scenario": "API Webhook PayOS sai signature",
+      "priority": "MEDIUM",
+      "expected": "Status 400 Bad Request",
+      "actual": "Status 400 Bad Request",
+      "time": "5ms",
+      "status": "Pass",
+      "file": "payment.api.test.ts"
+    },
+    {
+      "tcId": "TC_API_11",
+      "module": "Payment API",
+      "scenario": "API Webhook PayOS trùng lặp đơn",
+      "priority": "MEDIUM",
+      "expected": "Status 200, bỏ qua cập nhật",
+      "actual": "Status 200, bỏ qua cập nhật",
+      "time": "4ms",
+      "status": "Pass",
+      "file": "payment.api.test.ts"
+    },
+    {
       "tcId": "TC_UI_01",
       "module": "Login UI",
       "scenario": "Kết xuất form đăng nhập",
@@ -915,6 +937,6 @@
     "branch": "main",
     "commit": "f4b6d7a (Merge test suite config and workspace dynamic resolver)",
     "buildNumber": "B-101",
-    "lastUpdated": "17:58:29 19/7/2026"
+    "lastUpdated": "14:35:59 22/7/2026"
   }
 }

@@ -84,22 +84,22 @@ The execution results of the automated test files are detailed below:
 | **Court** | 10 | 10 | 0 | 0 | 0 | 41ms | **PASS** |
 | **Booking** | 5 | 5 | 0 | 0 | 0 | 42ms | **PASS** |
 | **Coach** | 4 | 4 | 0 | 0 | 0 | 11ms | **PASS** |
-| **Payment & Refund**| 6 | 6 | 0 | 0 | 0 | 50ms | **PASS** |
+| **Payment & Refund**| 8 | 8 | 0 | 0 | 0 | 50ms | **PASS** |
 | **Promotion** | 2 | 2 | 0 | 0 | 0 | 11ms | **PASS** |
 | **Review** | 2 | 2 | 0 | 0 | 0 | 9ms | **PASS** |
 | **Notification** | 2 | 2 | 0 | 0 | 0 | 11ms | **PASS** |
 | **Admin** | 2 | 2 | 0 | 0 | 0 | 8ms | **PASS** |
 | **Matching** | 8 | 8 | 0 | 0 | 0 | 9ms | **PASS** |
 | **AI Assistant** | 2 | 2 | 0 | 0 | 0 | 10ms | **PASS** |
-| **Total** | **53** | **53** | **0** | **0** | **0** | **~3.28s** (environment startup included) | **PASS** |
+| **Total** | **55** | **55** | **0** | **0** | **0** | **~3.28s** (environment startup included) | **PASS** |
 
 ---
 
 ## 7. Overall Test Statistics
 
-* **Total Test Cases:** 53
-* **Executed:** 53
-* **Passed:** 53
+* **Total Test Cases:** 55
+* **Executed:** 55
+* **Passed:** 55
 * **Failed:** 0
 * **Blocked:** 0
 * **Skipped:** 0

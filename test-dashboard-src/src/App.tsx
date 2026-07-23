@@ -171,7 +171,7 @@ export default function App() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-darkBg text-white">
         <RefreshCw className="animate-spin text-emerald-400 w-12 h-12 mb-4" />
-        <p className="text-gray-400 font-medium">Loading Professional QA Dashboard...</p>
+        <p className="text-gray-400 font-medium">Đang tải Bảng điều khiển QA chuyên nghiệp...</p>
       </div>
     );
   }
@@ -180,9 +180,9 @@ export default function App() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-darkBg text-white p-6 text-center">
         <ShieldAlert className="text-red-500 w-16 h-16 mb-4" />
-        <h2 className="text-2xl font-bold mb-2">No Dashboard Data Found</h2>
+        <h2 className="text-2xl font-bold mb-2">Không Tìm Thấy Dữ Liệu Dashboard</h2>
         <p className="text-gray-400 max-w-md">
-          Please run <code className="bg-gray-800 px-2 py-1 rounded text-red-400">npm run test:dashboard</code> to compile report sources into dashboard-data.json first.
+          Vui lòng chạy lệnh <code className="bg-gray-800 px-2 py-1 rounded text-red-400">npm run test:dashboard</code> để biên dịch nguồn báo cáo thành dashboard-data.json trước.
         </p>
       </div>
     );
@@ -253,21 +253,21 @@ export default function App() {
           <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-emerald-500 to-blue-500 shadow-md shadow-emerald-500/20 flex items-center justify-center font-bold text-white text-lg">P</div>
           <div>
             <h2 className="font-bold text-sm tracking-tight">PCS Portal</h2>
-            <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">QA Control Center</p>
+            <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">Trung tâm kiểm soát QA</p>
           </div>
         </div>
 
         <nav className="flex-1 px-4 py-6 space-y-1">
           {[
-            { id: "overview", label: "Overview", icon: Activity },
-            { id: "coverage", label: "Coverage Stats", icon: Layers },
-            { id: "execution", label: "Test Execution", icon: Play },
-            { id: "defects", label: "Defect Center", icon: AlertTriangle },
-            { id: "traceability", label: "Traceability", icon: Grid },
-            { id: "analytics", label: "Trend Analytics", icon: TrendingUp },
-            { id: "history", label: "History Log", icon: Calendar },
-            { id: "reports", label: "Report Center", icon: Download },
-            { id: "settings", label: "Settings", icon: Settings },
+            { id: "overview", label: "Tổng quan", icon: Activity },
+            { id: "coverage", label: "Thống kê độ phủ", icon: Layers },
+            { id: "execution", label: "Thực thi kiểm thử", icon: Play },
+            { id: "defects", label: "Phát hiện lỗi", icon: AlertTriangle },
+            { id: "traceability", label: "Ma trận RTM", icon: Grid },
+            { id: "analytics", label: "Phân tích xu hướng", icon: TrendingUp },
+            { id: "history", label: "Lịch sử chạy test", icon: Calendar },
+            { id: "reports", label: "Trung tâm báo cáo", icon: Download },
+            { id: "settings", label: "Cấu hình", icon: Settings },
           ].map((tab) => {
             const Icon = tab.icon;
             const active = activeTab === tab.id;
@@ -295,9 +295,9 @@ export default function App() {
         </nav>
 
         <div className="p-4 border-t border-slate-800 bg-slate-900/50 text-[11px] text-gray-500 space-y-1">
-          <p className="flex justify-between"><span>Branch:</span> <span className="font-mono text-gray-400">{meta.branch}</span></p>
-          <p className="flex justify-between"><span>Environment:</span> <span className="text-gray-400">{meta.environment}</span></p>
-          <p className="flex justify-between"><span>Build No:</span> <span className="font-mono text-gray-400">{meta.buildNumber}</span></p>
+          <p className="flex justify-between"><span>Nhánh Git:</span> <span className="font-mono text-gray-400">{meta.branch}</span></p>
+          <p className="flex justify-between"><span>Môi trường:</span> <span className="text-gray-400">{meta.environment}</span></p>
+          <p className="flex justify-between"><span>Mã Build:</span> <span className="font-mono text-gray-400">{meta.buildNumber}</span></p>
         </div>
       </aside>
 
@@ -307,18 +307,18 @@ export default function App() {
         {/* HEADER BAR */}
         <header className="h-16 border-b border-slate-800 bg-slate-900/40 flex items-center justify-between px-8 backdrop-blur-md sticky top-0 z-40">
           <div>
-            <span className="text-xs text-gray-500 font-semibold tracking-wider uppercase">Project: {meta.project}</span>
-            <h2 className="text-lg font-bold text-white capitalize">{activeTab} Dashboard</h2>
+            <span className="text-xs text-gray-500 font-semibold tracking-wider uppercase">Dự án: {meta.project}</span>
+            <h2 className="text-lg font-bold text-white capitalize">Bảng điều khiển {activeTab === "overview" ? "Tổng quan" : activeTab === "coverage" ? "Độ phủ" : activeTab === "execution" ? "Thực thi" : activeTab === "defects" ? "Lỗi hệ thống" : activeTab === "traceability" ? "Ma trận RTM" : activeTab === "analytics" ? "Phân tích xu hướng" : activeTab === "history" ? "Lịch sử" : activeTab === "reports" ? "Báo cáo" : activeTab === "settings" ? "Cấu hình" : activeTab}</h2>
           </div>
 
           <div className="flex items-center gap-4 text-xs text-gray-400">
             <div className="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
               <Clock size={13} className="text-emerald-400" />
-              <span>Last Run Time: <strong>{meta.lastUpdated}</strong></span>
+              <span>Lần chạy cuối: <strong>{meta.lastUpdated}</strong></span>
             </div>
             <div className="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
               <GitBranch size={13} className="text-blue-400" />
-              <span>Branch: <strong>{meta.branch}</strong></span>
+              <span>Nhánh Git: <strong>{meta.branch}</strong></span>
             </div>
           </div>
         </header>
@@ -332,11 +332,11 @@ export default function App() {
               {/* Stat Cards Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
                 {[
-                  { label: "Total Test Cases", val: ov.total, color: "text-white" },
-                  { label: "Passed", val: ov.passed, color: "text-emerald-400" },
-                  { label: "Failed", val: ov.failed, color: "text-red-400" },
-                  { label: "Pass Rate", val: ov.passRate, color: "text-emerald-300" },
-                  { label: "Execution Time", val: ov.executionTime, color: "text-cyan-400" }
+                  { label: "Tổng Số Ca Kiểm Thử", val: ov.total, color: "text-white" },
+                  { label: "Thành Công (Passed)", val: ov.passed, color: "text-emerald-400" },
+                  { label: "Thất Bại (Failed)", val: ov.failed, color: "text-red-400" },
+                  { label: "Tỷ Lệ Thành Công", val: ov.passRate, color: "text-emerald-300" },
+                  { label: "Thời Gian Thực Thi", val: ov.executionTime, color: "text-cyan-400" }
                 ].map((stat, i) => (
                   <div key={i} className="glass-panel rounded-2xl p-5 flex flex-col gap-2">
                     <span className="text-[11px] text-gray-500 font-bold uppercase tracking-wider">{stat.label}</span>
@@ -350,12 +350,12 @@ export default function App() {
                 
                 {/* Allocation suite */}
                 <div className="glass-panel rounded-2xl p-6 lg:col-span-2 space-y-5">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Test Suite Allocation</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Phân bổ các bộ kiểm thử</h3>
                   <div className="space-y-4">
                     {[
-                      { name: "Unit Tests (Vitest / JSDOM)", count: data.testTypes.unit, color: "bg-emerald-500", pct: (data.testTypes.unit / ov.total) * 100 },
-                      { name: "API Integration Tests (Supertest Mock)", count: data.testTypes.api, color: "bg-cyan-500", pct: (data.testTypes.api / ov.total) * 100 },
-                      { name: "UI Component Tests (RTL / JSDOM)", count: data.testTypes.ui, color: "bg-fuchsia-500", pct: (data.testTypes.ui / ov.total) * 100 }
+                      { name: "Unit Tests (Kiểm thử đơn vị)", count: data.testTypes.unit, color: "bg-emerald-500", pct: (data.testTypes.unit / ov.total) * 100 },
+                      { name: "API Integration Tests (Kiểm thử tích hợp)", count: data.testTypes.api, color: "bg-cyan-500", pct: (data.testTypes.api / ov.total) * 100 },
+                      { name: "UI Component Tests (Kiểm thử giao diện)", count: data.testTypes.ui, color: "bg-fuchsia-500", pct: (data.testTypes.ui / ov.total) * 100 }
                     ].map((type, idx) => (
                       <div key={idx} className="space-y-2">
                         <div className="flex justify-between text-sm">
@@ -372,22 +372,22 @@ export default function App() {
 
                 {/* Automation rates & defects */}
                 <div className="glass-panel rounded-2xl p-6 space-y-5">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Automation Status</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Trạng thái tự động hóa</h3>
                   <div className="flex items-center justify-center py-4">
                     <div className="w-36 h-36 rounded-full border-8 border-emerald-500 flex flex-col items-center justify-center shadow-lg shadow-emerald-500/10">
                       <span className="text-3xl font-extrabold text-white">100%</span>
-                      <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Automated</span>
+                      <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Tự động hóa</span>
                     </div>
                   </div>
                   <div className="flex justify-around text-center text-xs">
                     <div>
                       <h4 className="text-emerald-400 font-bold text-base">53</h4>
-                      <p className="text-gray-500">Automated TCs</p>
+                      <p className="text-gray-500">Ca tự động hóa</p>
                     </div>
                     <div className="border-l border-slate-800"></div>
                     <div>
                       <h4 className="text-gray-400 font-bold text-base">0</h4>
-                      <p className="text-gray-500">Manual TCs</p>
+                      <p className="text-gray-500">Ca thủ công</p>
                     </div>
                   </div>
                 </div>
@@ -395,15 +395,15 @@ export default function App() {
 
               {/* Pipeline Step Flow */}
               <div className="glass-panel rounded-2xl p-6 space-y-5">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">CI/CD QA Pipeline Workflow</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Luồng tích hợp liên tục CI/CD QA</h3>
                 <div className="grid grid-cols-1 md:grid-cols-7 gap-4 pt-2">
                   {pipelineSteps.map((step, idx) => (
                     <div key={idx} className="relative flex flex-col items-center text-center bg-slate-900/50 p-4 rounded-xl border border-slate-800/80">
                       <div className="w-10 h-10 rounded-full bg-slate-800 border-2 border-emerald-500 flex items-center justify-center mb-3">
                         <CheckCircle size={16} className="text-emerald-400" />
                       </div>
-                      <span className="text-xs font-bold text-gray-200">{step.name}</span>
-                      <span className="text-[10px] text-emerald-400 font-semibold uppercase mt-1 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/15">Completed</span>
+                      <span className="text-xs font-bold text-gray-200">{step.name === "Build System" ? "Hệ thống Build" : step.name === "Unit Testing" ? "Kiểm thử Đơn vị" : step.name === "API Integration" ? "Tích hợp API" : step.name === "UI Component" ? "Thành phần UI" : step.name === "Coverage Gate" ? "Cổng độ phủ" : step.name === "Reports Ready" ? "Báo cáo sẵn sàng" : "Mở Dashboard"}</span>
+                      <span className="text-[10px] text-emerald-400 font-semibold uppercase mt-1 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/15">Hoàn thành</span>
                       
                       {idx < 6 && (
                         <div className="hidden md:block absolute top-9 -right-3 z-10 text-slate-700">
@@ -424,14 +424,14 @@ export default function App() {
               
               {/* circular progress gauge card */}
               <div className="glass-panel rounded-2xl p-6 space-y-6">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">System Code Coverage Metrics</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Chỉ số Độ phủ Mã nguồn Hệ thống</h3>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-4">
                   {[
-                    { label: "Statements", val: cov.statements },
-                    { label: "Branches", val: cov.branches },
-                    { label: "Functions", val: cov.functions },
-                    { label: "Lines", val: cov.lines }
+                    { label: "Câu Lệnh (Statements)", val: cov.statements },
+                    { label: "Nhánh (Branches)", val: cov.branches },
+                    { label: "Hàm (Functions)", val: cov.functions },
+                    { label: "Dòng Code (Lines)", val: cov.lines }
                   ].map((item, idx) => {
                     const circ = 251.2;
                     const offset = circ - (item.val / 100) * circ;
@@ -455,22 +455,22 @@ export default function App() {
 
               {/* Coverage by module */}
               <div className="glass-panel rounded-2xl p-6 space-y-5">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Coverage breakdown by Module</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Độ bao phủ chi tiết theo từng Mô-đun</h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
-                    { mod: "User & Auth Management", val: 95.0, lines: "115/120" },
-                    { mod: "Court Slot Scheduling", val: 90.0, lines: "152/170" },
-                    { mod: "Booking Operations", val: 96.0, lines: "210/220" },
-                    { mod: "Coach Profile Registry", val: 94.0, lines: "84/90" },
-                    { mod: "Payments & MOMO/PayOS Webhook", val: 95.0, lines: "180/190" },
-                    { mod: "Refund Policy Calculations", val: 100.0, lines: "50/50" },
-                    { mod: "Voucher & Promotion Limits", val: 94.0, lines: "72/78" },
-                    { mod: "Review System feedback", val: 96.0, lines: "36/38" },
-                    { mod: "System Notification Gateway", val: 90.0, lines: "63/70" },
-                    { mod: "Player Matching Suggestion", val: 100.0, lines: "128/128" },
-                    { mod: "Gemini Chatbot Assistant", val: 92.0, lines: "46/50" },
-                    { mod: "Admin Dashboard Reporting", val: 97.0, lines: "97/100" }
+                    { mod: "Quản lý Người dùng & Đăng nhập", val: 95.0, lines: "115/120" },
+                    { mod: "Lịch trình Slot đặt sân", val: 90.0, lines: "152/170" },
+                    { mod: "Nghiệp vụ Đặt sân", val: 96.0, lines: "210/220" },
+                    { mod: "Danh sách Huấn luyện viên", val: 94.0, lines: "84/90" },
+                    { mod: "Thanh toán & Webhook (MOMO/PayOS)", val: 95.0, lines: "180/190" },
+                    { mod: "Tính toán Chính sách Hoàn tiền", val: 100.0, lines: "50/50" },
+                    { mod: "Giới hạn Mã giảm giá & Khuyến mãi", val: 94.0, lines: "72/78" },
+                    { mod: "Phản hồi từ Hệ thống Đánh giá", val: 96.0, lines: "36/38" },
+                    { mod: "Cổng gửi Thông báo Hệ thống", val: 90.0, lines: "63/70" },
+                    { mod: "Gợi ý Ghép cặp Đối thủ/Đồng đội", val: 100.0, lines: "128/128" },
+                    { mod: "Trợ lý ảo Chatbot Gemini", val: 92.0, lines: "46/50" },
+                    { mod: "Báo cáo Dashboard cho Admin", val: 97.0, lines: "97/100" }
                   ].map((m, idx) => (
                     <div key={idx} className="bg-slate-900/30 p-4 rounded-xl border border-slate-800/80 space-y-2">
                       <div className="flex justify-between text-xs">
@@ -501,10 +501,10 @@ export default function App() {
                   <Search size={16} className="text-gray-500" />
                   <input
                     type="text"
-                    placeholder="Search test case or scenario..."
+                    placeholder="Tìm kiếm ca kiểm thử hoặc kịch bản..."
                     value={searchTerm}
                     onChange={(e) => {
-                      setSearchTerm(e.target.value);
+                       setSearchTerm(e.target.value);
                       setExecPage(1);
                     }}
                     className="bg-transparent border-none outline-none text-xs w-full placeholder-gray-600"
@@ -514,7 +514,7 @@ export default function App() {
                 <div className="flex flex-wrap gap-3 text-xs">
                   {/* Status filter */}
                   <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 px-3 py-2 rounded-xl">
-                    <span className="text-gray-500 font-bold">Status:</span>
+                    <span className="text-gray-500 font-bold">Trạng thái:</span>
                     <select
                       value={statusFilter}
                       onChange={(e) => {
@@ -523,15 +523,15 @@ export default function App() {
                       }}
                       className="bg-transparent border-none outline-none font-bold text-emerald-400"
                     >
-                      <option value="ALL" className="bg-slate-900 text-white">ALL</option>
-                      <option value="PASS" className="bg-slate-900 text-emerald-400">PASS</option>
-                      <option value="FAIL" className="bg-slate-900 text-red-400">FAIL</option>
+                      <option value="ALL" className="bg-slate-900 text-white">TẤT CẢ</option>
+                      <option value="PASS" className="bg-slate-900 text-emerald-400">ĐẠT (PASS)</option>
+                      <option value="FAIL" className="bg-slate-900 text-red-400">LỖI (FAIL)</option>
                     </select>
                   </div>
 
                   {/* Priority filter */}
                   <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 px-3 py-2 rounded-xl">
-                    <span className="text-gray-500 font-bold">Priority:</span>
+                    <span className="text-gray-500 font-bold">Độ ưu tiên:</span>
                     <select
                       value={priorityFilter}
                       onChange={(e) => {
@@ -540,10 +540,10 @@ export default function App() {
                       }}
                       className="bg-transparent border-none outline-none font-bold text-blue-400"
                     >
-                      <option value="ALL" className="bg-slate-900 text-white">ALL</option>
-                      <option value="HIGH" className="bg-slate-900 text-orange-400">HIGH</option>
-                      <option value="MEDIUM" className="bg-slate-900 text-yellow-400">MEDIUM</option>
-                      <option value="LOW" className="bg-slate-900 text-green-400">LOW</option>
+                      <option value="ALL" className="bg-slate-900 text-white">TẤT CẢ</option>
+                      <option value="HIGH" className="bg-slate-900 text-orange-400">CAO (HIGH)</option>
+                      <option value="MEDIUM" className="bg-slate-900 text-yellow-400">TRUNG BÌNH (MEDIUM)</option>
+                      <option value="LOW" className="bg-slate-900 text-green-400">THẤP (LOW)</option>
                     </select>
                   </div>
                 </div>
@@ -555,13 +555,13 @@ export default function App() {
                   <table className="w-full text-left border-collapse text-xs">
                     <thead>
                       <tr className="bg-slate-900/60 border-b border-slate-800">
-                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">TC_ID</th>
-                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Module</th>
-                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Priority</th>
-                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Scenario</th>
-                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Expected Result</th>
-                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Execution Time</th>
-                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider text-center">Status</th>
+                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Mã Test Case (TC_ID)</th>
+                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Mô-đun</th>
+                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Độ ưu tiên</th>
+                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Kịch bản test</th>
+                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Kết quả mong đợi</th>
+                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider">Thời gian chạy</th>
+                        <th className="p-4 font-semibold text-gray-500 uppercase tracking-wider text-center">Trạng thái</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-800/40">
@@ -575,15 +575,19 @@ export default function App() {
                               row.priority === "MEDIUM" ? "bg-yellow-500/10 text-yellow-400 border border-yellow-500/15" :
                               "bg-emerald-500/10 text-emerald-400 border border-emerald-500/15"
                             }`}>
-                              {row.priority}
+                              {row.priority === "HIGH" ? "CAO" : row.priority === "MEDIUM" ? "TRUNG BÌNH" : "THẤP"}
                             </span>
                           </td>
                           <td className="p-4 text-gray-400 max-w-xs truncate">{row.scenario}</td>
                           <td className="p-4 text-gray-400 max-w-xs truncate">{row.expected}</td>
                           <td className="p-4 font-mono text-gray-500">{row.time}</td>
                           <td className="p-4 text-center">
-                            <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full font-bold text-[9px] uppercase tracking-wider">
-                              {row.status}
+                            <span className={`px-2 py-0.5 rounded-full font-bold text-[9px] uppercase tracking-wider ${
+                              row.status.toUpperCase() === "PASS"
+                                ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                                : "bg-red-500/10 text-red-400 border border-red-500/20"
+                            }`}>
+                              {row.status.toUpperCase() === "PASS" ? "ĐẠT (PASS)" : "LỖI (FAIL)"}
                             </span>
                           </td>
                         </tr>
@@ -594,7 +598,7 @@ export default function App() {
 
                 {/* Pagination Controls */}
                 <div className="p-4 bg-slate-900/40 border-t border-slate-800 flex items-center justify-between text-xs">
-                  <span className="text-gray-500">Showing {Math.min(filteredExecs.length, (execPage-1)*itemsPerPage+1)} to {Math.min(filteredExecs.length, execPage*itemsPerPage)} of {filteredExecs.length} entries</span>
+                  <span className="text-gray-500">Hiển thị {Math.min(filteredExecs.length, (execPage-1)*itemsPerPage+1)} đến {Math.min(filteredExecs.length, execPage*itemsPerPage)} trong số {filteredExecs.length} bản ghi</span>
                   
                   <div className="flex gap-2">
                     <button
@@ -628,24 +632,24 @@ export default function App() {
                 
                 {/* Defect count ring */}
                 <div className="glass-panel rounded-2xl p-6 flex flex-col items-center justify-center space-y-4">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 self-start border-l-4 border-red-500 pl-3">Defect Distribution</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 self-start border-l-4 border-red-500 pl-3">Phân bố lỗi hệ thống</h3>
                   <div className="w-32 h-32 rounded-full border-[6px] border-red-500 flex flex-col items-center justify-center shadow-lg shadow-red-500/10">
                     <span className="text-4xl font-extrabold text-red-500">{defSum.total}</span>
-                    <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Defects</span>
+                    <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Lỗi</span>
                   </div>
-                  <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/15 px-3 py-1 rounded-full">Both Resolved & Verified ✓</span>
+                  <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/15 px-3 py-1 rounded-full">Đã Giải Quyết & Xác Minh ✓</span>
                 </div>
 
                 {/* Severities allocation */}
                 <div className="glass-panel rounded-2xl p-6 lg:col-span-2 space-y-4">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-red-500 pl-3">Defect Severities Breakdown</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-red-500 pl-3">Mức độ nghiêm trọng của lỗi</h3>
                   
                   <div className="grid grid-cols-2 gap-4">
                     {[
-                      { name: "Critical Severity", count: defSum.critical, color: "text-red-500", bar: "bg-red-500" },
-                      { name: "High Severity", count: defSum.high, color: "text-orange-500", bar: "bg-orange-500" },
-                      { name: "Medium Severity", count: defSum.medium, color: "text-yellow-500", bar: "bg-yellow-500" },
-                      { name: "Low Severity", count: defSum.low, color: "text-blue-500", bar: "bg-blue-500" }
+                      { name: "Nghiêm trọng (Critical)", count: defSum.critical, color: "text-red-500", bar: "bg-red-500" },
+                      { name: "Cao (High)", count: defSum.high, color: "text-orange-500", bar: "bg-orange-500" },
+                      { name: "Trung bình (Medium)", count: defSum.medium, color: "text-yellow-500", bar: "bg-yellow-500" },
+                      { name: "Thấp (Low)", count: defSum.low, color: "text-blue-500", bar: "bg-blue-500" }
                     ].map((sev, idx) => (
                       <div key={idx} className="bg-slate-900/50 p-4 rounded-xl border border-slate-800/80 space-y-2">
                         <div className="flex justify-between items-center text-xs">
@@ -663,18 +667,18 @@ export default function App() {
 
               {/* Bug List Table */}
               <div className="glass-panel rounded-2xl p-6 space-y-4">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-red-500 pl-3">Active & Resolved Defect logs</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-red-500 pl-3">Nhật ký lỗi hệ thống</h3>
                 
                 <div className="overflow-x-auto rounded-xl border border-slate-800">
                   <table className="w-full text-left border-collapse text-xs">
                     <thead>
                       <tr className="bg-slate-900/80 border-b border-slate-800">
-                        <th className="p-4 font-semibold text-gray-500">Bug ID</th>
-                        <th className="p-4 font-semibold text-gray-500">Module</th>
-                        <th className="p-4 font-semibold text-gray-500">Title</th>
-                        <th className="p-4 font-semibold text-gray-500">Severity</th>
-                        <th className="p-4 font-semibold text-gray-500">Status</th>
-                        <th className="p-4 font-semibold text-gray-500 text-center">Action</th>
+                        <th className="p-4 font-semibold text-gray-500">Mã Lỗi (Bug ID)</th>
+                        <th className="p-4 font-semibold text-gray-500">Mô-đun</th>
+                        <th className="p-4 font-semibold text-gray-500">Tiêu đề lỗi</th>
+                        <th className="p-4 font-semibold text-gray-500">Mức độ</th>
+                        <th className="p-4 font-semibold text-gray-500">Trạng thái</th>
+                        <th className="p-4 font-semibold text-gray-500 text-center">Hành động</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-800/40">
@@ -687,12 +691,12 @@ export default function App() {
                             <span className={`px-2 py-0.5 rounded-full font-bold text-[9px] uppercase tracking-wider ${
                               bug.severity === "High" ? "bg-orange-500/10 text-orange-400 border border-orange-500/15" : "bg-yellow-500/10 text-yellow-400 border border-yellow-500/15"
                             }`}>
-                              {bug.severity}
+                              {bug.severity === "High" ? "Cao" : "Trung bình"}
                             </span>
                           </td>
                           <td className="p-4">
                             <span className="bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-bold text-[9px] uppercase tracking-wider">
-                              {bug.status}
+                              {bug.status === "Resolved" ? "ĐÃ SỬA" : "ĐÃ XÁC MINH"}
                             </span>
                           </td>
                           <td className="p-4 text-center">
@@ -700,7 +704,7 @@ export default function App() {
                               onClick={() => setSelectedDefect(bug)}
                               className="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-emerald-400 font-bold rounded-lg border border-slate-700/60 inline-flex items-center gap-1.5 transition-all text-[11px]"
                             >
-                              <Eye size={12} /> View Details
+                              <Eye size={12} /> Xem Chi Tiết
                             </button>
                           </td>
                         </tr>
@@ -722,13 +726,13 @@ export default function App() {
                   <Search size={16} className="text-gray-500" />
                   <input
                     type="text"
-                    placeholder="Search by TC_ID or Feature..."
+                    placeholder="Tìm kiếm theo TC_ID hoặc Chức năng..."
                     value={rtmSearch}
                     onChange={(e) => setRtmSearch(e.target.value)}
                     className="bg-transparent border-none outline-none text-xs w-full placeholder-gray-600"
                   />
                 </div>
-                <span className="text-xs text-gray-500">Matching Rows: <strong>{filteredRtm.length}</strong></span>
+                <span className="text-xs text-gray-500">Số dòng khớp: <strong>{filteredRtm.length}</strong></span>
               </div>
 
               <div className="glass-panel rounded-2xl overflow-hidden border border-slate-800/80">
@@ -736,14 +740,14 @@ export default function App() {
                   <table className="w-full text-left border-collapse text-xs">
                     <thead>
                       <tr className="bg-slate-900/60 border-b border-slate-800">
-                        <th className="p-4 font-semibold text-gray-500">Feature</th>
-                        <th className="p-4 font-semibold text-gray-500">Use Case</th>
-                        <th className="p-4 font-semibold text-gray-500">Test Case ID</th>
-                        <th className="p-4 font-semibold text-gray-500">Unit Test File</th>
-                        <th className="p-4 font-semibold text-gray-500">API Test File</th>
-                        <th className="p-4 font-semibold text-gray-500">UI Test File</th>
-                        <th className="p-4 font-semibold text-gray-500 text-center">Status</th>
-                        <th className="p-4 font-semibold text-gray-500">Defect</th>
+                        <th className="p-4 font-semibold text-gray-500">Chức năng</th>
+                        <th className="p-4 font-semibold text-gray-500">Kịch bản sử dụng (Use Case)</th>
+                        <th className="p-4 font-semibold text-gray-500">Mã Ca Kiểm Thử (TC_ID)</th>
+                        <th className="p-4 font-semibold text-gray-500">Tệp Unit Test</th>
+                        <th className="p-4 font-semibold text-gray-500">Tệp API Test</th>
+                        <th className="p-4 font-semibold text-gray-500">Tệp UI Test</th>
+                        <th className="p-4 font-semibold text-gray-500 text-center">Trạng thái</th>
+                        <th className="p-4 font-semibold text-gray-500">Lỗi liên quan</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-800/40">
@@ -787,7 +791,7 @@ export default function App() {
                 
                 {/* Pass Rate Trend */}
                 <div className="glass-panel rounded-2xl p-6 space-y-4">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Pass Rate Trend History</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Lịch sử tỷ lệ đạt kiểm thử (Pass Rate)</h3>
                   <div className="h-72">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={hist}>
@@ -796,7 +800,7 @@ export default function App() {
                         <YAxis stroke="#9ca3af" fontSize={11} domain={[80, 100]} />
                         <Tooltip contentStyle={{ backgroundColor: "#1e293b", borderColor: "#334155" }} />
                         <Legend />
-                        <Line type="monotone" dataKey="passRate" name="Pass Rate (%)" stroke="#10b981" strokeWidth={3} activeDot={{ r: 8 }} />
+                        <Line type="monotone" dataKey="passRate" name="Tỷ lệ đạt (%)" stroke="#10b981" strokeWidth={3} activeDot={{ r: 8 }} />
                       </LineChart>
                     </ResponsiveContainer>
                   </div>
@@ -804,7 +808,7 @@ export default function App() {
 
                 {/* Coverage Trend */}
                 <div className="glass-panel rounded-2xl p-6 space-y-4">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Code Coverage Trend History</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Lịch sử xu hướng độ bao phủ (Coverage)</h3>
                   <div className="h-72">
                     <ResponsiveContainer width="100%" height="100%">
                       <AreaChart data={hist}>
@@ -813,7 +817,7 @@ export default function App() {
                         <YAxis stroke="#9ca3af" fontSize={11} domain={[80, 100]} />
                         <Tooltip contentStyle={{ backgroundColor: "#1e293b", borderColor: "#334155" }} />
                         <Legend />
-                        <Area type="monotone" dataKey="coverage" name="Coverage (%)" stroke="#06b6d4" fill="rgba(6, 182, 212, 0.1)" strokeWidth={3} />
+                        <Area type="monotone" dataKey="coverage" name="Độ bao phủ (%)" stroke="#06b6d4" fill="rgba(6, 182, 212, 0.1)" strokeWidth={3} />
                       </AreaChart>
                     </ResponsiveContainer>
                   </div>
@@ -821,7 +825,7 @@ export default function App() {
 
                 {/* Execution Time Trend */}
                 <div className="glass-panel rounded-2xl p-6 lg:col-span-2 space-y-4">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Execution Duration Trend (Seconds)</h3>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Xu hướng thời gian thực thi (Giây)</h3>
                   <div className="h-72">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={hist}>
@@ -848,31 +852,31 @@ export default function App() {
               {/* Compare Config Box */}
               <div className="glass-panel rounded-2xl p-5 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                 <div className="flex items-center gap-2 text-xs">
-                  <span className="text-gray-500 font-bold uppercase">Compare Run A:</span>
+                  <span className="text-gray-500 font-bold uppercase">So sánh bản chạy A:</span>
                   <select
                     value={compareA || ""}
                     onChange={(e) => setCompareA(Number(e.target.value) || null)}
                     className="bg-slate-900 border border-slate-800 px-3 py-2 rounded-xl text-white font-bold"
                   >
-                    <option value="">Select Build</option>
+                    <option value="">Chọn bản Build</option>
                     {hist.map(h => <option key={h.runId} value={h.runId}>{h.build} ({h.date})</option>)}
                   </select>
                 </div>
 
                 <div className="flex items-center gap-2 text-xs">
-                  <span className="text-gray-500 font-bold uppercase">Compare Run B:</span>
+                  <span className="text-gray-500 font-bold uppercase">So sánh bản chạy B:</span>
                   <select
                     value={compareB || ""}
                     onChange={(e) => setCompareB(Number(e.target.value) || null)}
                     className="bg-slate-900 border border-slate-800 px-3 py-2 rounded-xl text-white font-bold"
                   >
-                    <option value="">Select Build</option>
+                    <option value="">Chọn bản Build</option>
                     {hist.map(h => <option key={h.runId} value={h.runId}>{h.build} ({h.date})</option>)}
                   </select>
                 </div>
 
                 <div className="text-right text-xs font-bold text-emerald-400">
-                  {runA && runB ? "✓ Side-by-Side Comparison Loaded" : "ℹ️ Select two builds to load metrics diff"}
+                  {runA && runB ? "✓ Đã tải dữ liệu so sánh song song" : "ℹ️ Chọn hai bản build để tải chênh lệch chỉ số"}
                 </div>
               </div>
 
@@ -882,28 +886,28 @@ export default function App() {
                   {/* Run A card */}
                   <div className="glass-panel rounded-2xl p-6 space-y-4 border-l-4 border-cyan-500">
                     <div className="flex justify-between items-center">
-                      <h4 className="font-extrabold text-lg text-white">Build {runA.build}</h4>
+                      <h4 className="font-extrabold text-lg text-white">Bản Build {runA.build}</h4>
                       <span className="text-xs text-gray-500 font-mono">{runA.date}</span>
                     </div>
                     <div className="grid grid-cols-2 gap-4 text-xs">
-                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Pass Rate</p><p className="text-lg font-bold text-emerald-400">{runA.passRate}%</p></div>
-                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Coverage</p><p className="text-lg font-bold text-cyan-400">{runA.coverage}%</p></div>
-                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Duration</p><p className="text-lg font-bold text-yellow-400">{runA.executionTime}s</p></div>
-                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Passed Tests</p><p className="text-lg font-bold text-white">{runA.passedCount}</p></div>
+                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Tỷ lệ đạt</p><p className="text-lg font-bold text-emerald-400">{runA.passRate}%</p></div>
+                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Độ bao phủ</p><p className="text-lg font-bold text-cyan-400">{runA.coverage}%</p></div>
+                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Thời gian</p><p className="text-lg font-bold text-yellow-400">{runA.executionTime}s</p></div>
+                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Ca thành công</p><p className="text-lg font-bold text-white">{runA.passedCount}</p></div>
                     </div>
                   </div>
 
                   {/* Run B card */}
                   <div className="glass-panel rounded-2xl p-6 space-y-4 border-l-4 border-fuchsia-500">
                     <div className="flex justify-between items-center">
-                      <h4 className="font-extrabold text-lg text-white">Build {runB.build}</h4>
+                      <h4 className="font-extrabold text-lg text-white">Bản Build {runB.build}</h4>
                       <span className="text-xs text-gray-500 font-mono">{runB.date}</span>
                     </div>
                     <div className="grid grid-cols-2 gap-4 text-xs">
-                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Pass Rate</p><p className="text-lg font-bold text-emerald-400">{runB.passRate}%</p></div>
-                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Coverage</p><p className="text-lg font-bold text-cyan-400">{runB.coverage}%</p></div>
-                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Duration</p><p className="text-lg font-bold text-yellow-400">{runB.executionTime}s</p></div>
-                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Passed Tests</p><p className="text-lg font-bold text-white">{runB.passedCount}</p></div>
+                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Tỷ lệ đạt</p><p className="text-lg font-bold text-emerald-400">{runB.passRate}%</p></div>
+                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Độ bao phủ</p><p className="text-lg font-bold text-cyan-400">{runB.coverage}%</p></div>
+                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Thời gian</p><p className="text-lg font-bold text-yellow-400">{runB.executionTime}s</p></div>
+                      <div className="bg-slate-900/60 p-3 rounded-lg"><p className="text-gray-500">Ca thành công</p><p className="text-lg font-bold text-white">{runB.passedCount}</p></div>
                     </div>
                   </div>
                 </div>
@@ -911,19 +915,19 @@ export default function App() {
 
               {/* History list card */}
               <div className="glass-panel rounded-2xl p-6 space-y-4">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Historical Run Records</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Bản ghi Lịch sử Chạy Kiểm thử</h3>
                 
                 <div className="overflow-x-auto rounded-xl border border-slate-800">
                   <table className="w-full text-left border-collapse text-xs">
                     <thead>
                       <tr className="bg-slate-900/80 border-b border-slate-800">
-                        <th className="p-4 font-semibold text-gray-500">Build Number</th>
-                        <th className="p-4 font-semibold text-gray-500">Run Time</th>
-                        <th className="p-4 font-semibold text-gray-500">Passed</th>
-                        <th className="p-4 font-semibold text-gray-500">Failed</th>
-                        <th className="p-4 font-semibold text-gray-500">Pass Rate</th>
-                        <th className="p-4 font-semibold text-gray-500">Coverage</th>
-                        <th className="p-4 font-semibold text-gray-500">Duration</th>
+                        <th className="p-4 font-semibold text-gray-500">Mã số Build</th>
+                        <th className="p-4 font-semibold text-gray-500">Thời gian chạy</th>
+                        <th className="p-4 font-semibold text-gray-500">Thành công</th>
+                        <th className="p-4 font-semibold text-gray-500">Thất bại</th>
+                        <th className="p-4 font-semibold text-gray-500">Tỷ lệ đạt</th>
+                        <th className="p-4 font-semibold text-gray-500">Độ bao phủ</th>
+                        <th className="p-4 font-semibold text-gray-500">Thời gian</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-800/40">
@@ -992,14 +996,14 @@ export default function App() {
             <div className="space-y-6">
               
               <div className="glass-panel rounded-2xl p-6 space-y-5">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Dashboard Configuration & Metadata</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-400 border-l-4 border-emerald-500 pl-3">Cấu hình Dashboard & Dữ liệu đặc tả</h3>
                 
                 <div className="divide-y divide-slate-800 text-xs">
-                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">QA Project Name</span><span className="font-semibold text-white">{meta.project}</span></div>
-                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">Git Target Branch</span><span className="font-semibold text-blue-400 flex items-center gap-1.5"><GitBranch size={13} />{meta.branch}</span></div>
-                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">Last Git Commit</span><span className="font-mono text-gray-300 max-w-md truncate">{meta.commit}</span></div>
-                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">Pipeline Runner Instance</span><span className="font-semibold text-emerald-400 flex items-center gap-1.5"><Server size={13} />Local Host Process</span></div>
-                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">Database Source</span><span className="font-semibold text-white">SQL Server (PCS_System_7 sa)</span></div>
+                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">Tên Dự Án QA</span><span className="font-semibold text-white">{meta.project}</span></div>
+                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">Nhánh Git Đích</span><span className="font-semibold text-blue-400 flex items-center gap-1.5"><GitBranch size={13} />{meta.branch}</span></div>
+                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">Commit Git Cuối</span><span className="font-mono text-gray-300 max-w-md truncate">{meta.commit}</span></div>
+                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">Môi trường thực thi Pipeline</span><span className="font-semibold text-emerald-400 flex items-center gap-1.5"><Server size={13} />Tiến trình máy cục bộ (Local Host)</span></div>
+                  <div className="py-4 flex justify-between"><span className="text-gray-500 font-bold uppercase">Cơ sở dữ liệu nguồn</span><span className="font-semibold text-white">SQL Server (PCS_System_7 sa)</span></div>
                 </div>
               </div>
 
@@ -1028,26 +1032,26 @@ export default function App() {
             
             <div className="p-6 space-y-4 max-h-[70vh] overflow-y-auto text-xs">
               <div>
-                <span className="text-[10px] text-gray-500 font-bold uppercase">Steps to Reproduce</span>
+                <span className="text-[10px] text-gray-500 font-bold uppercase">Các bước tái hiện lỗi (Steps to Reproduce)</span>
                 <p className="text-gray-300 bg-slate-950/40 p-3 rounded-lg border border-slate-800/80 mt-1">{selectedDefect.steps}</p>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <span className="text-[10px] text-gray-500 font-bold uppercase">Expected Result</span>
+                  <span className="text-[10px] text-gray-500 font-bold uppercase">Kết quả mong đợi</span>
                   <p className="text-emerald-400 bg-emerald-500/5 p-3 rounded-lg border border-emerald-500/10 mt-1">{selectedDefect.expected}</p>
                 </div>
                 <div>
-                  <span className="text-[10px] text-gray-500 font-bold uppercase">Actual Result</span>
+                  <span className="text-[10px] text-gray-500 font-bold uppercase">Kết quả thực tế</span>
                   <p className="text-red-400 bg-red-500/5 p-3 rounded-lg border border-red-500/10 mt-1">{selectedDefect.actual}</p>
                 </div>
               </div>
               <div>
-                <span className="text-[10px] text-gray-500 font-bold uppercase">Suggested Bug Fix</span>
+                <span className="text-[10px] text-gray-500 font-bold uppercase">Đề xuất phương án sửa lỗi</span>
                 <p className="text-blue-400 bg-blue-500/5 p-3 rounded-lg border border-blue-500/10 font-mono mt-1">{selectedDefect.suggestedFix}</p>
               </div>
               <div className="pt-2 border-t border-slate-800 flex justify-between text-[11px] text-gray-500">
-                <span>Module: <strong className="text-gray-300">{selectedDefect.module}</strong></span>
-                <span>Related TC_ID: <strong className="text-gray-300 font-mono">{selectedDefect.relatedTcId}</strong></span>
+                <span>Mô-đun: <strong className="text-gray-300">{selectedDefect.module}</strong></span>
+                <span>Ca kiểm thử liên quan: <strong className="text-gray-300 font-mono">{selectedDefect.relatedTcId}</strong></span>
               </div>
             </div>
           </div>

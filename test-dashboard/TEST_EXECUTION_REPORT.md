@@ -51,6 +51,8 @@
 | `TC_API_07` | Booking API | API Đặt sân trực tuyến | Gửi token Player | CourtID, bookingDate... | Status 201 Created | Status 201 Created | 19ms | Pass | `booking.api.test.ts` | Status 201 |
 | `TC_API_08` | Booking API | API Đặt sân chưa đăng nhập | Không gửi token | CourtID, bookingDate... | Status 401 Unauthorized | Status 401 Unauthorized | 2ms | Pass | `booking.api.test.ts` | Status 401 |
 | `TC_API_09` | Payment API | API Webhook PayOS xác nhận | Signature hợp lệ | Data thanh toán thành công | Status 200, cập nhật Booking | Status 200, cập nhật Booking | 25ms | Pass | `payment.api.test.ts` | Status 200 |
+| `TC_API_10` | Payment API | API Webhook PayOS sai signature | Signature không hợp lệ | Data sai signature | Status 400 Bad Request | Status 400 Bad Request | 5ms | Pass | `payment.api.test.ts` | Status 400 |
+| `TC_API_11` | Payment API | API Webhook PayOS trùng lặp đơn | Đơn hàng trạng thái Paid | Data thanh toán đã trả | Status 200, bỏ qua cập nhật | Status 200, bỏ qua cập nhật | 4ms | Pass | `payment.api.test.ts` | Status 200 |
 | `TC_UI_01` | Login UI | Kết xuất form đăng nhập |LoginPage renders | Email/Password fields | Renders LOGIN button & form | Renders LOGIN button & form | 28ms | Pass | `login.ui.test.tsx` | UI Rendered |
 | `TC_UI_02` | Login UI | Hiển thị lỗi nhập email sai |LoginPage renders | Email: `"invalid-email"` | Hiển thị "Email không hợp lệ" | Hiển thị "Email không hợp lệ" | 4ms | Pass | `login.ui.test.tsx` | Error shown |
 | `TC_UI_03` | Login UI | Gọi API đăng nhập khi nhấn LOGIN |LoginPage renders | Email & Password hợp lệ | Gọi loginApi và chuyển hướng | Gọi loginApi và chuyển hướng | 18ms | Pass | `login.ui.test.tsx` | loginApi called |

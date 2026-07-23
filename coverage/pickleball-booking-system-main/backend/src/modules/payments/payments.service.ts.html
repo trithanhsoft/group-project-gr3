@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.65% </span>
+                <span class="strong">36.95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>164/460</span>
+                <span class='fraction'>170/460</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.22% </span>
+                <span class="strong">40.62% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/27</span>
+                <span class='fraction'>13/32</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.65% </span>
+                <span class="strong">36.95% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>164/460</span>
+                <span class='fraction'>170/460</span>
             </div>
         
             
@@ -1229,40 +1229,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1292,7 +1292,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1956,10 +1956,10 @@ export async function handlePayosWebhook(
   // 1. Verify webhook signature bằng SDK chính thức
   const verified = await verifyPayosWebhook(body);
 &nbsp;
-  if (!verified.isValid || !verified.data) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    console.warn("[PayOS Webhook] Invalid signature – rejected");</span>
-<span class="cstat-no" title="statement not covered" >    return { success: false };</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  if (!verified.isValid || !verified.data) {
+    console.warn("[PayOS Webhook] Invalid signature – rejected");
+    return { success: false };
+  }
 &nbsp;
   const webhookData = verified.data;
   const orderCode = webhookData.orderCode;
@@ -1976,10 +1976,10 @@ export async function handlePayosWebhook(
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
   // 3. Idempotent: đã Paid thì không update lại
-  if (payment.Status === "Paid") <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >    console.info(`[PayOS Webhook] Payment ${payment.PaymentID} already Paid – skip`);</span>
-<span class="cstat-no" title="statement not covered" >    return { success: true };</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  if (payment.Status === "Paid") {
+    console.info(`[PayOS Webhook] Payment ${payment.PaymentID} already Paid – skip`);
+    return { success: true };
+  }
 &nbsp;
   // 4. So khớp amount (bảo mật: không tin amount từ webhook nếu chênh lệch)
   const dbAmount = Number(payment.Amount);
@@ -2233,7 +2233,7 @@ export type MomoReturnResult = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-07-13T06:31:45.110Z
+                at 2026-07-22T07:25:34.639Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
